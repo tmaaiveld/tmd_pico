@@ -1,0 +1,30 @@
+
+Input:
+- Raw data from EBM-NLP (to retrieve the labels)
+- Features from StanfordCoreNLP
+- construct more features? more parsers, (latent) representations?
+
+    * Potential challenges:
+    - different tokenizers may produce token columns of different length.
+      Can be addressed by dropping NA rows, imputation or specific fixing depending on severity of issue.
+    - string extraction the way Roser described it is not the way the data are labeled.
+      Possibly might need to add sequence start, contents, end markers to data before it can be used for ML
+      or perhaps not all methods require these markers? research existing implementations more.
+
+Preprocessing should yield a dataframe containing a [document, token] level index, tokens, features, and one-hot-coded
+binary columns for each label and/or a column specifying all labels assigned
+
+Model:
+Potential approaches:
+Sequential RNN network (keras)
+- google colab contains an example.
+
+?
+?
+
+Output:
+Assigned labels
+
+- multi-class problem over several variables?
+- binary-class problem over each variable?
+- sequence extraction problem?
