@@ -19,7 +19,8 @@ Potential approaches:
 Sequential RNN network (keras)
 - google colab contains an example.
 
-?
+Bagging/boosting with libraries? (XGBoost)
+
 ?
 
 Output:
