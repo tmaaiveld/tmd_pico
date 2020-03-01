@@ -5,9 +5,11 @@ from pathlib import Path
 from glob import glob
 import pandas as pd
 from util import c, get_id
+import os
 import codecs
 
 EBM_COLS = ["ID", "Word", "Lemma", "UPOS", "XPOS", "HEAD", "DEPREL"]
+
 
 def import_data(path, filename, preprocessing):
 
@@ -24,29 +26,46 @@ def import_data(path, filename, preprocessing):
     df = preprocessing(path)
 
     # todo: module to add labels
-
-    df.to_csv(path / filename)
+    try:
+        df.to_csv(path / filename)
+    except AttributeError:
+        pass
 
     print('Imported Stanford CoreNLP CoNNL features.')
     return path / filename
+
+
+def sep_dir(path_to_dir, dir_name):
+    dfs = []
+    doc_ids = []
+    for file_name in path_to_dir.rglob('*.ann'):
+        # print(file_name.stem)
+        doc_ids.append(get_id(file_name.name))
+        with open(path_to_dir / file_name, 'r') as f:
+            s = pd.DataFrame(f.read().split(','))
+            dfs.append(pd.DataFrame(s))
+
+    doc_keys = c([[doc_ids[i]] * df.shape[0] for i, df in enumerate(dfs)])
+    df = pd.concat(dfs)
+    df.index = doc_keys
+    df.columns = [dir_name]
+    return df
 
 
 def raw(path):
     """
     todo: read tarfile with tarfile module, extract files and preprocess. See
     """
-
-    raise NotImplementedError()
-
-    # # todo: read these in properly
-    # test_path = RAW_DATA_PATH / 'ebm_nlp_1_00.tar.gz'
-    # with tarfile.open(test_path) as tar:
-    #     names = tar.getnames()
-    #     for path in names:
-    #         file = pd.read_csv(tar.extractfile(path),
-    #                            compression='gzip', delimiter='\t', header=None)
-    #         print(file)
-    #         break
+    sep_dfs = []
+    folder = 'data/raw/ebm_nlp_1_00/annotations/aggregated/starting_spans/'
+    p = Path(os.path.dirname(__file__))
+    directories = ['interventions', 'outcomes', 'participants']
+    sub_dirs = ['test', 'train']
+    for d in directories:
+        dir_path = p / folder / d / sub_dirs[1]
+        df = sep_dir(dir_path, d)
+        sep_dfs.append(df)
+    return pd.concat(sep_dfs, axis=1)
 
 
 def CoNNL(path):
@@ -66,6 +85,7 @@ def CoNNL(path):
 
     doc_keys = c([[doc_ids[i]] * df.shape[0] for i, df in enumerate(dfs)])
     tok_keys = c([df.iloc[:,0] for df in dfs])
+
 
     index = pd.MultiIndex.from_tuples(zip(doc_keys, tok_keys), names=['PMID', 'token'])
 
