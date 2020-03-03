@@ -21,6 +21,8 @@ Sequential RNN network (keras)
 
 Bagging/boosting with libraries? (XGBoost)
 
+different tree models?
+
 ?
 
 Output:

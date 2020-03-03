@@ -18,3 +18,4 @@ def get_id(path):
 
 def create_folders(*args):
     [Path(arg).mkdir(parents=True, exist_ok=True) for arg in args]
+    print('drop ebm_1_parsed into data/CoNNL and extract ebm_nlp_1_00.tar.gz into data/raw.')
