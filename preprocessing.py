@@ -2,7 +2,7 @@ import tarfile
 import zipfile
 from pathlib import Path
 import pandas as pd
-from util import c, get_id, create_folders, compare_keys
+from util import c, get_id, make_dirs
 
 # these will end up in a params dict somewhere
 DATA_PATH = Path('data')
@@ -50,7 +50,7 @@ def import_raw(path, phase, verbose=True):
         test_fnames = list(temp.glob(f'annotations/aggregated/{phase}/{cat}/test/crowd/*.ann'))
 
         # split parameters differ for ebm_nlp_1_00 ['_'] and ebm_nl_2_00
-        # split_params = ['_', ','] if dir_path.name == 'ebm_nlp_1_00' else ['.','\n']
+        # split_params = ['_', ','] if path.name == 'ebm_nlp_1_00' else ['.','\n'] # todo: outdated
 
         pio[cat] = {f.name.split('_')[0]: f.open().read().split(',')
                     for f in train_fnames + test_fnames}
@@ -128,8 +128,8 @@ def import_CoNNL(dir_path, verbose=True):
 
 
 if __name__ == '__main__':
-
-    create_folders(*[DATA_PATH / f for f in ['raw','CoNNL', 'word2vec', 'temp']])
+    make_dirs(DATA_PATH)
+    make_dirs(*[(DATA_PATH / d).mkdir() for d in ['raw','CoNNL', 'word2vec', 'temp']])
 
     if (DATA_PATH / 'raw.pkl').exists():
         raw = pd.read_pickle(DATA_PATH / 'raw.pkl')
@@ -152,15 +152,6 @@ if __name__ == '__main__':
 
     raw.to_pickle('data/raw.pkl')
     print('Preprocessing complete.')
-
-
-
-
-
-
-
-
-
 
 
 
