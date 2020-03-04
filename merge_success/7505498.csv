@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+7505498,0,Randomized,1,Randomized,randomize,VBN,_,2,amod
+7505498,1,trial,2,trial,trial,NN,_,0,ROOT
+7505498,2,of,3,of,of,IN,_,5,case
+7505498,3,Sandostatin,4,Sandostatin,sandostatin,NN,_,5,compound
+7505498,4,prophylaxis,5,prophylaxis,prophylaxis,NN,_,2,nmod
+7505498,5,for,6,for,for,IN,_,8,case
+7505498,6,preservation,7,preservation,preservation,NN,_,8,compound
+7505498,7,injury,8,injury,injury,NN,_,2,nmod
+7505498,8,after,9,after,after,IN,_,11,case
+7505498,9,pancreas,10,pancreas,pancreas,NN,_,11,compound
+7505498,10,transplantation,11,transplantation,transplantation,NN,_,2,nmod
+7505498,11,.,12,.,.,.,_,2,punct

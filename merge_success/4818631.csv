@@ -1,0 +1,12 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4818631,0,[,1,-LSB-,-lsb-,-LRB-,_,4,punct
+4818631,1,Folic,2,Folic,folic,JJ,_,4,amod
+4818631,2,acid,3,acid,acid,NN,_,4,compound
+4818631,3,deficiency,4,deficiency,deficiency,NN,_,0,ROOT
+4818631,4,in,5,in,in,IN,_,7,case
+4818631,5,pregnant,6,pregnant,pregnant,JJ,_,7,amod
+4818631,6,women,7,women,woman,NNS,_,4,nmod
+4818631,7,in,8,in,in,IN,_,9,case
+4818631,8,Switzerland,9,Switzerland,Switzerland,NNP,_,7,nmod
+4818631,9,],10,-RSB-,-rsb-,-RRB-,_,4,punct
+4818631,10,.,11,.,.,.,_,4,punct

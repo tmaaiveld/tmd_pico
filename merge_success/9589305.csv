@@ -1,0 +1,12 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+9589305,0,Anti-tumor,1,Anti-tumor,anti-tumor,JJ,_,4,amod
+9589305,1,necrosis,2,necrosis,necrosis,NN,_,4,compound
+9589305,2,factor,3,factor,factor,NN,_,4,compound
+9589305,3,alpha,4,alpha,alpha,NN,_,0,ROOT
+9589305,4,:,5,:,:,:,_,4,punct
+9589305,5,Crohn,6,Crohn,crohn,NN,_,8,nmod:poss
+9589305,6,'s,7,'s,'s,POS,_,8,case
+9589305,7,disease,8,disease,disease,NN,_,10,compound
+9589305,8,guided,9,guided,guide,VBD,_,10,amod
+9589305,9,missile,10,missile,missile,NN,_,4,dep
+9589305,10,.,11,.,.,.,_,4,punct

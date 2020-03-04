@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+8396304,0,Cimetidine,1,Cimetidine,Cimetidine,NNP,_,5,nsubj
+8396304,1,is,2,is,be,VBZ,_,5,cop
+8396304,2,not,3,not,not,RB,_,5,neg
+8396304,3,more,4,more,more,RBR,_,5,advmod
+8396304,4,effective,5,effective,effective,JJ,_,0,ROOT
+8396304,5,than,6,than,than,IN,_,7,case
+8396304,6,placebo,7,placebo,placebo,NN,_,5,nmod
+8396304,7,in,8,in,in,IN,_,11,case
+8396304,8,acute,9,acute,acute,JJ,_,11,amod
+8396304,9,infectious,10,infectious,infectious,JJ,_,11,amod
+8396304,10,mononucleosis,11,mononucleosis,mononucleosis,NN,_,7,nmod
+8396304,11,.,12,.,.,.,_,5,punct

@@ -1,0 +1,14 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+3602327,0,The,1,The,the,DT,_,2,det
+3602327,1,effects,2,effects,effect,NNS,_,0,ROOT
+3602327,2,of,3,of,of,IN,_,4,case
+3602327,3,amantadine,4,amantadine,amantadine,NN,_,2,nmod
+3602327,4,vs.,5,vs.,vs.,CC,_,4,cc
+3602327,5,trihexyphenidyl,6,trihexyphenidyl,trihexyphenidyl,NN,_,4,conj
+3602327,6,on,7,on,on,IN,_,8,case
+3602327,7,memory,8,memory,memory,NN,_,2,nmod
+3602327,8,in,9,in,in,IN,_,12,case
+3602327,9,elderly,10,elderly,elderly,JJ,_,12,amod
+3602327,10,normal,11,normal,normal,JJ,_,12,amod
+3602327,11,volunteers,12,volunteers,volunteer,NNS,_,8,nmod
+3602327,12,.,13,.,.,.,_,2,punct

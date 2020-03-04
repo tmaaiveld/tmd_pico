@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4157501,0,Potassium,1,Potassium,potassium,NN,_,0,ROOT
+4157501,1,",",2,",",",",",",_,1,punct
+4157501,2,glucose,3,glucose,glucose,NN,_,1,conj
+4157501,3,",",4,",",",",",",_,1,punct
+4157501,4,and,5,and,and,CC,_,1,cc
+4157501,5,insulin,6,insulin,insulin,NN,_,1,conj
+4157501,6,in,7,in,in,IN,_,8,case
+4157501,7,treatment,8,treatment,treatment,NN,_,1,nmod
+4157501,8,of,9,of,of,IN,_,11,case
+4157501,9,myocardial,10,myocardial,myocardial,JJ,_,11,amod
+4157501,10,infarction,11,infarction,infarction,NN,_,8,nmod
+4157501,11,.,12,.,.,.,_,1,punct

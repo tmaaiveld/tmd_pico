@@ -1,0 +1,17 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+24887304,0,Effects,1,Effects,effect,NNS,_,0,ROOT
+24887304,1,of,2,of,of,IN,_,3,case
+24887304,2,ranolazine,3,ranolazine,ranolazine,NN,_,1,nmod
+24887304,3,on,4,on,on,IN,_,5,case
+24887304,4,quality,5,quality,quality,NN,_,1,nmod
+24887304,5,of,6,of,of,IN,_,7,case
+24887304,6,life,7,life,life,NN,_,5,nmod
+24887304,7,among,8,among,among,IN,_,9,case
+24887304,8,patients,9,patients,patient,NNS,_,5,nmod
+24887304,9,with,10,with,with,IN,_,12,case
+24887304,10,diabetes,11,diabetes,diabetes,NN,_,12,compound
+24887304,11,mellitus,12,mellitus,mellitus,NN,_,9,nmod
+24887304,12,and,13,and,and,CC,_,12,cc
+24887304,13,stable,14,stable,stable,JJ,_,15,amod
+24887304,14,angina,15,angina,angina,NN,_,12,conj
+24887304,15,.,16,.,.,.,_,1,punct

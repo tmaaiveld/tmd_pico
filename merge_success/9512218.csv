@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+9512218,0,Treatment,1,Treatment,treatment,NN,_,0,ROOT
+9512218,1,of,2,of,of,IN,_,3,case
+9512218,2,hyperinsulinaemia,3,hyperinsulinaemia,hyperinsulinaemia,NN,_,1,nmod
+9512218,3,in,4,in,in,IN,_,7,case
+9512218,4,polycystic,5,polycystic,polycystic,JJ,_,7,amod
+9512218,5,ovary,6,ovary,ovary,JJ,_,7,amod
+9512218,6,syndrome,7,syndrome,syndrome,NN,_,1,nmod
+9512218,7,?,8,?,?,.,_,1,punct

@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4101734,0,Fluorouracil,1,Fluorouracil,Fluorouracil,NNP,_,0,ROOT
+4101734,1,as,2,as,as,IN,_,4,case
+4101734,2,an,3,an,a,DT,_,4,det
+4101734,3,adjuvant,4,adjuvant,adjuvant,JJ,_,1,nmod
+4101734,4,to,5,to,to,TO,_,6,case
+4101734,5,surgery,6,surgery,surgery,NN,_,4,nmod
+4101734,6,in,7,in,in,IN,_,8,case
+4101734,7,carcinoma,8,carcinoma,carcinoma,NN,_,1,nmod
+4101734,8,of,9,of,of,IN,_,11,case
+4101734,9,the,10,the,the,DT,_,11,det
+4101734,10,colon,11,colon,colon,NN,_,8,nmod
+4101734,11,.,12,.,.,.,_,1,punct

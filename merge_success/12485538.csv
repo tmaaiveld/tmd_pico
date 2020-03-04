@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+12485538,0,Risperidone,1,Risperidone,Risperidone,NNP,_,2,nsubj
+12485538,1,improves,2,improves,improve,VBZ,_,0,ROOT
+12485538,2,behavior,3,behavior,behavior,NN,_,2,dobj
+12485538,3,in,4,in,in,IN,_,5,case
+12485538,4,children,5,children,child,NNS,_,3,nmod
+12485538,5,with,6,with,with,IN,_,7,case
+12485538,6,autism,7,autism,autism,NN,_,5,nmod
+12485538,7,.,8,.,.,.,_,2,punct

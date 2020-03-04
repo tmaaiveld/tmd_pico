@@ -1,0 +1,6 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+2089829,0,Tetracaine/adrenaline/cocaine,1,Tetracaine/adrenaline/cocaine,tetracaine/adrenaline/cocaine,NN,_,0,ROOT
+2089829,1,for,2,for,for,IN,_,4,case
+2089829,2,local,3,local,local,JJ,_,4,amod
+2089829,3,anesthesia,4,anesthesia,anesthesia,NN,_,1,nmod
+2089829,4,.,5,.,.,.,_,1,punct

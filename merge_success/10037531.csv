@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+10037531,0,Xylitol,1,Xylitol,Xylitol,NNP,_,0,ROOT
+10037531,1,for,2,for,for,IN,_,3,case
+10037531,2,prevention,3,prevention,prevention,NN,_,1,nmod
+10037531,3,of,4,of,of,IN,_,7,case
+10037531,4,acute,5,acute,acute,JJ,_,7,amod
+10037531,5,otitis,6,otitis,otitis,JJ,_,7,amod
+10037531,6,media,7,media,media,NNS,_,3,nmod
+10037531,7,.,8,.,.,.,_,1,punct

@@ -1,0 +1,12 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+1819001,0,Response,1,Response,response,NN,_,0,ROOT
+1819001,1,of,2,of,of,IN,_,3,case
+1819001,2,patients,3,patients,patient,NNS,_,1,nmod
+1819001,3,to,4,to,to,TO,_,5,case
+1819001,4,enalapril,5,enalapril,enalapril,NN,_,3,nmod
+1819001,5,",",6,",",",",",",_,5,punct
+1819001,6,felodipine,7,felodipine,felodipine,NN,_,5,conj
+1819001,7,and,8,and,and,CC,_,5,cc
+1819001,8,their,9,their,they,PRP$,_,10,nmod:poss
+1819001,9,combination,10,combination,combination,NN,_,5,conj
+1819001,10,.,11,.,.,.,_,1,punct

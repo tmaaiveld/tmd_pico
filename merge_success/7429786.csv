@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+7429786,0,Liquid,1,Liquid,liquid,NN,_,2,compound
+7429786,1,antacids,2,antacids,antacid,NNS,_,0,ROOT
+7429786,2,:,3,:,:,:,_,2,punct
+7429786,3,palatability,4,palatability,palatability,NN,_,7,compound
+7429786,4,and,5,and,and,CC,_,4,cc
+7429786,5,predictability,6,predictability,predictability,NN,_,4,conj
+7429786,6,study,7,study,study,NN,_,2,dep
+7429786,7,.,8,.,.,.,_,2,punct

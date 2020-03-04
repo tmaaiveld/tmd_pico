@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4165041,0,Beta-cytotrophic,1,Beta-cytotrophic,beta-cytotrophic,JJ,_,2,amod
+4165041,1,effects,2,effects,effect,NNS,_,0,ROOT
+4165041,2,of,3,of,of,IN,_,4,case
+4165041,3,glucose,4,glucose,glucose,NN,_,2,nmod
+4165041,4,",",5,",",",",",",_,4,punct
+4165041,5,glucagon,6,glucagon,glucagon,NN,_,4,conj
+4165041,6,",",7,",",",",",",_,4,punct
+4165041,7,and,8,and,and,CC,_,4,cc
+4165041,8,tolbutamide,9,tolbutamide,tolbutamide,NN,_,4,conj
+4165041,9,in,10,in,in,IN,_,11,case
+4165041,10,man,11,man,man,NN,_,2,nmod
+4165041,11,.,12,.,.,.,_,2,punct

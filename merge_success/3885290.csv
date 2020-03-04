@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+3885290,0,Neuroleptic-related,1,Neuroleptic-related,neuroleptic-related,JJ,_,2,amod
+3885290,1,dyskinesias,2,dyskinesias,dyskinesia,NNS,_,0,ROOT
+3885290,2,in,3,in,in,IN,_,5,case
+3885290,3,autistic,4,autistic,autistic,JJ,_,5,amod
+3885290,4,children,5,children,child,NNS,_,2,nmod
+3885290,5,:,6,:,:,:,_,2,punct
+3885290,6,a,7,a,a,DT,_,9,det
+3885290,7,prospective,8,prospective,prospective,JJ,_,9,amod
+3885290,8,study,9,study,study,NN,_,2,dep
+3885290,9,.,10,.,.,.,_,2,punct

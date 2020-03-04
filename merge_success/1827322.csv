@@ -1,0 +1,10 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+1827322,0,Controversies,1,Controversies,controversy,NNS,_,0,ROOT
+1827322,1,in,2,in,in,IN,_,4,case
+1827322,2,the,3,the,the,DT,_,4,det
+1827322,3,management,4,management,management,NN,_,1,nmod
+1827322,4,of,5,of,of,IN,_,8,case
+1827322,5,Hodgkin,6,Hodgkin,hodgkin,NN,_,8,nmod:poss
+1827322,6,'s,7,'s,'s,POS,_,6,case
+1827322,7,disease,8,disease,disease,NN,_,4,nmod
+1827322,8,.,9,.,.,.,_,1,punct

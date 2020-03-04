@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+1764390,0,The,1,The,the,DT,_,3,det
+1764390,1,EUROSCAN,2,EUROSCAN,EUROSCAN,NNP,_,3,compound
+1764390,2,Study,3,Study,Study,NNP,_,0,ROOT
+1764390,3,.,4,.,.,.,_,3,punct
+1764390,4,EUROSCAN,1,EUROSCAN,EUROSCAN,NNP,_,3,compound
+1764390,5,Steering,2,Steering,Steering,NNP,_,3,compound
+1764390,6,Committee,3,Committee,Committee,NNP,_,0,ROOT
+1764390,7,.,4,.,.,.,_,3,punct

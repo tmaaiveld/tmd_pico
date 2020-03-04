@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+2231203,0,Azathioprine,1,Azathioprine,Azathioprine,NNP,_,0,ROOT
+2231203,1,and,2,and,and,CC,_,1,cc
+2231203,2,the,3,the,the,DT,_,4,det
+2231203,3,treatment,4,treatment,treatment,NN,_,1,conj
+2231203,4,of,5,of,of,IN,_,9,case
+2231203,5,chronic,6,chronic,chronic,JJ,_,9,amod
+2231203,6,inflammatory,7,inflammatory,inflammatory,JJ,_,9,amod
+2231203,7,bowel,8,bowel,bowel,NN,_,9,compound
+2231203,8,disease,9,disease,disease,NN,_,4,nmod
+2231203,9,.,10,.,.,.,_,1,punct

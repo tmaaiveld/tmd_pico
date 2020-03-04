@@ -1,0 +1,10 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+3132778,0,[,1,-LSB-,-lsb-,-LRB-,_,4,punct
+3132778,1,Total,2,Total,total,JJ,_,4,amod
+3132778,2,parenteral,3,parenteral,parenteral,JJ,_,4,amod
+3132778,3,nutrition,4,nutrition,nutrition,NN,_,0,ROOT
+3132778,4,in,5,in,in,IN,_,7,case
+3132778,5,colon,6,colon,colon,NN,_,7,compound
+3132778,6,surgery,7,surgery,surgery,NN,_,4,nmod
+3132778,7,],8,-RSB-,-rsb-,-RRB-,_,4,punct
+3132778,8,.,9,.,.,.,_,4,punct

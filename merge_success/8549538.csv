@@ -1,0 +1,10 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+8549538,0,The,1,The,the,DT,_,2,det
+8549538,1,effect,2,effect,effect,NN,_,0,ROOT
+8549538,2,of,3,of,of,IN,_,5,case
+8549538,3,liquid,4,liquid,liquid,JJ,_,5,amod
+8549538,4,fibre,5,fibre,fibre,NN,_,2,nmod
+8549538,5,on,6,on,on,IN,_,8,case
+8549538,6,feeding,7,feeding,feed,VBG,_,8,amod
+8549538,7,behaviour,8,behaviour,behaviour,NN,_,2,nmod
+8549538,8,.,9,.,.,.,_,2,punct

@@ -1,0 +1,8 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+1984893,0,Unstable,1,Unstable,unstable,JJ,_,2,amod
+1984893,1,angina,2,angina,angina,NN,_,0,ROOT
+1984893,2,.,3,.,.,.,_,2,punct
+1984893,3,Quality,1,Quality,Quality,NNP,_,0,ROOT
+1984893,4,of,2,of,of,IN,_,3,case
+1984893,5,life,3,life,life,NN,_,1,nmod
+1984893,6,.,4,.,.,.,_,1,punct

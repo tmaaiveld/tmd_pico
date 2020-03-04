@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4716523,0,Truncal,1,Truncal,truncal,JJ,_,2,amod
+4716523,1,vagotomy,2,vagotomy,vagotomy,NN,_,0,ROOT
+4716523,2,and,3,and,and,CC,_,2,cc
+4716523,3,drainage,4,drainage,drainage,NN,_,2,conj
+4716523,4,for,5,for,for,IN,_,7,case
+4716523,5,duodenal,6,duodenal,duodenal,JJ,_,7,amod
+4716523,6,ulcer,7,ulcer,ulcer,NN,_,2,nmod
+4716523,7,.,8,.,.,.,_,2,punct

@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+7036084,0,[,1,-LSB-,-lsb-,-LRB-,_,7,punct
+7036084,1,Cred?,2,Credé,Credé,NNP,_,5,nmod:poss
+7036084,2,'s,3,'s,'s,POS,_,2,case
+7036084,3,prevention,4,prevention,prevention,NN,_,5,compound
+7036084,4,method,5,method,method,NN,_,7,nsubj
+7036084,5,has,6,has,have,VBZ,_,7,aux
+7036084,6,lost,7,lost,lose,VBN,_,0,ROOT
+7036084,7,its,8,its,its,PRP$,_,9,nmod:poss
+7036084,8,justification,9,justification,justification,NN,_,7,dobj
+7036084,9,today,10,today,today,NN,_,7,nmod:tmod
+7036084,10,],11,-RSB-,-rsb-,-RRB-,_,7,punct
+7036084,11,.,12,.,.,.,_,7,punct

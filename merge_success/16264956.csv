@@ -1,0 +1,12 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+16264956,0,Chemotherapy,1,Chemotherapy,chemotherapy,NN,_,0,ROOT
+16264956,1,for,2,for,for,IN,_,4,case
+16264956,2,metastatic,3,metastatic,metastatic,JJ,_,4,amod
+16264956,3,NSCLC,4,NSCLC,nsclc,NN,_,1,nmod
+16264956,4,:,5,:,:,:,_,1,punct
+16264956,5,current,6,current,current,JJ,_,7,amod
+16264956,6,status,7,status,status,NN,_,1,dep
+16264956,7,and,8,and,and,CC,_,7,cc
+16264956,8,future,9,future,future,JJ,_,10,amod
+16264956,9,direction,10,direction,direction,NN,_,7,conj
+16264956,10,.,11,.,.,.,_,1,punct

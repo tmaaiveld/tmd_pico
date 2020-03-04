@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+18217284,0,[,1,-LSB-,-lsb-,-LRB-,_,2,punct
+18217284,1,Optimization,2,Optimization,optimization,NN,_,0,ROOT
+18217284,2,of,3,of,of,IN,_,6,case
+18217284,3,the,4,the,the,DT,_,6,det
+18217284,4,postoperative,5,postoperative,postoperative,JJ,_,6,amod
+18217284,5,period,6,period,period,NN,_,2,nmod
+18217284,6,in,7,in,in,IN,_,8,case
+18217284,7,children,8,children,child,NNS,_,6,nmod
+18217284,8,after,9,after,after,IN,_,10,case
+18217284,9,adenotonsillectomy,10,adenotonsillectomy,adenotonsillectomy,JJ,_,2,nmod
+18217284,10,],11,-RSB-,-rsb-,-RRB-,_,2,punct
+18217284,11,.,12,.,.,.,_,2,punct

@@ -1,0 +1,16 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+7118776,0,The,1,The,the,DT,_,2,det
+7118776,1,pharmacokinetics,2,pharmacokinetics,pharmacokinetic,NNS,_,0,ROOT
+7118776,2,of,3,of,of,IN,_,4,case
+7118776,3,metronidazole,4,metronidazole,metronidazole,NN,_,2,nmod
+7118776,4,and,5,and,and,CC,_,4,cc
+7118776,5,tinidazole,6,tinidazole,tinidazole,NN,_,4,conj
+7118776,6,in,7,in,in,IN,_,8,case
+7118776,7,patients,8,patients,patient,NNS,_,2,nmod
+7118776,8,with,9,with,with,IN,_,11,case
+7118776,9,mixed,10,mixed,mixed,JJ,_,11,amod
+7118776,10,aerobic,11,aerobic,aerobic,JJ,_,8,nmod
+7118776,11,--,12,--,--,:,_,11,punct
+7118776,12,anaerobic,13,anaerobic,anaerobic,JJ,_,14,amod
+7118776,13,infections,14,infections,infection,NNS,_,11,dep
+7118776,14,.,15,.,.,.,_,2,punct

@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+16981667,0,Long-term,1,Long-term,long-term,JJ,_,2,amod
+16981667,1,results,2,results,result,NNS,_,0,ROOT
+16981667,2,of,3,of,of,IN,_,7,case
+16981667,3,the,4,the,the,DT,_,7,det
+16981667,4,MRC,5,MRC,MRC,NNP,_,7,compound
+16981667,5,AML10,6,AML10,aml10,NN,_,7,compound
+16981667,6,trial,7,trial,trial,NN,_,2,nmod
+16981667,7,.,8,.,.,.,_,2,punct

@@ -1,0 +1,14 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+5573167,0,Response,1,Response,response,NN,_,2,compound
+5573167,1,latencies,2,latencies,latency,NNS,_,0,ROOT
+5573167,2,to,3,to,to,TO,_,5,case
+5573167,3,auditory,4,auditory,auditory,JJ,_,5,amod
+5573167,4,stimuli,5,stimuli,stimulus,NNS,_,2,nmod
+5573167,5,in,6,in,in,IN,_,8,case
+5573167,6,autistic,7,autistic,autistic,JJ,_,8,amod
+5573167,7,children,8,children,child,NNS,_,5,nmod
+5573167,8,engaged,9,engaged,engage,VBN,_,8,acl
+5573167,9,in,10,in,in,IN,_,12,case
+5573167,10,self-stimulatory,11,self-stimulatory,self-stimulatory,JJ,_,12,amod
+5573167,11,behavior,12,behavior,behavior,NN,_,9,nmod
+5573167,12,.,13,.,.,.,_,2,punct

@@ -1,0 +1,10 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4404700,0,Auditory,1,Auditory,auditory,JJ,_,3,amod
+4404700,1,signal,2,signal,signal,NN,_,3,compound
+4404700,2,detection,3,detection,detection,NN,_,0,ROOT
+4404700,3,in,4,in,in,IN,_,8,case
+4404700,4,paranoid,5,paranoid,paranoid,JJ,_,8,amod
+4404700,5,and,6,and,and,CC,_,5,cc
+4404700,6,nonparanoid,7,nonparanoid,nonparanoid,JJ,_,5,conj
+4404700,7,schizophrenics,8,schizophrenics,schizophrenic,NNS,_,3,nmod
+4404700,8,.,9,.,.,.,_,3,punct

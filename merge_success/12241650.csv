@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+12241650,0,Laser,1,Laser,Laser,NNP,_,2,compound
+12241650,1,treatment,2,treatment,treatment,NN,_,0,ROOT
+12241650,2,of,3,of,of,IN,_,5,case
+12241650,3,childhood,4,childhood,childhood,NN,_,5,compound
+12241650,4,haemangioma,5,haemangioma,haemangioma,NN,_,2,nmod
+12241650,5,:,6,:,:,:,_,2,punct
+12241650,6,progress,7,progress,progress,NN,_,2,dep
+12241650,7,or,8,or,or,CC,_,7,cc
+12241650,8,not,9,not,not,RB,_,7,conj
+12241650,9,?,10,?,?,.,_,2,punct

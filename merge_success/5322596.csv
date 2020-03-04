@@ -1,0 +1,14 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+5322596,0,Incidence,1,Incidence,incidence,NN,_,0,ROOT
+5322596,1,of,2,of,of,IN,_,3,case
+5322596,2,candida,3,candida,candida,NN,_,1,nmod
+5322596,3,in,4,in,in,IN,_,6,case
+5322596,4,hospital,5,hospital,hospital,NN,_,6,compound
+5322596,5,in-patients,6,in-patients,in-patient,NNS,_,1,nmod
+5322596,6,and,7,and,and,CC,_,1,cc
+5322596,7,the,8,the,the,DT,_,9,det
+5322596,8,effects,9,effects,effect,NNS,_,1,conj
+5322596,9,of,10,of,of,IN,_,12,case
+5322596,10,antibiotic,11,antibiotic,antibiotic,JJ,_,12,amod
+5322596,11,therapy,12,therapy,therapy,NN,_,9,nmod
+5322596,12,.,13,.,.,.,_,1,punct

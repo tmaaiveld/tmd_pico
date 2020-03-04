@@ -1,0 +1,14 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+6116246,0,A,1,A,a,DT,_,3,det
+6116246,1,double-blind,2,double-blind,double-blind,JJ,_,3,amod
+6116246,2,comparison,3,comparison,comparison,NN,_,0,ROOT
+6116246,3,of,4,of,of,IN,_,5,case
+6116246,4,bromperidol,5,bromperidol,bromperidol,NN,_,3,nmod
+6116246,5,and,6,and,and,CC,_,5,cc
+6116246,6,haloperidol,7,haloperidol,haloperidol,NN,_,5,conj
+6116246,7,in,8,in,in,IN,_,12,case
+6116246,8,newly,9,newly,newly,RB,_,10,advmod
+6116246,9,admitted,10,admitted,admit,VBN,_,12,amod
+6116246,10,schizophrenic,11,schizophrenic,schizophrenic,JJ,_,12,amod
+6116246,11,patients,12,patients,patient,NNS,_,3,nmod
+6116246,12,.,13,.,.,.,_,3,punct

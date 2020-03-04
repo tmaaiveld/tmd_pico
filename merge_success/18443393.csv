@@ -1,0 +1,10 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+18443393,0,A,1,A,a,DT,_,4,det
+18443393,1,pilot,2,pilot,pilot,NN,_,4,compound
+18443393,2,group,3,group,group,NN,_,4,compound
+18443393,3,therapy,4,therapy,therapy,NN,_,0,ROOT
+18443393,4,for,5,for,for,IN,_,8,case
+18443393,5,functional,6,functional,functional,JJ,_,8,amod
+18443393,6,memory,7,memory,memory,NN,_,8,compound
+18443393,7,disorder,8,disorder,disorder,NN,_,4,nmod
+18443393,8,.,9,.,.,.,_,4,punct

@@ -1,0 +1,17 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+5341828,0,Long-term,1,Long-term,long-term,JJ,_,3,amod
+5341828,1,heparin,2,heparin,heparin,NN,_,3,compound
+5341828,2,treatment,3,treatment,treatment,NN,_,0,ROOT
+5341828,3,in,4,in,in,IN,_,7,case
+5341828,4,ischaemic,5,ischaemic,ischaemic,JJ,_,7,amod
+5341828,5,heart,6,heart,heart,NN,_,7,compound
+5341828,6,disease,7,disease,disease,NN,_,3,nmod
+5341828,7,.,8,.,.,.,_,3,punct
+5341828,8,Effects,1,Effects,effect,NNS,_,0,ROOT
+5341828,9,on,2,on,on,IN,_,4,case
+5341828,10,clinical,3,clinical,clinical,JJ,_,4,amod
+5341828,11,condition,4,condition,condition,NN,_,1,nmod
+5341828,12,and,5,and,and,CC,_,4,cc
+5341828,13,plasma,6,plasma,plasma,NN,_,7,compound
+5341828,14,lipids,7,lipids,lipid,NNS,_,4,conj
+5341828,15,.,8,.,.,.,_,1,punct

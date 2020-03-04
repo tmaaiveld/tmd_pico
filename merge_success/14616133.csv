@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+14616133,0,Mometasone,1,Mometasone,mometasone,NN,_,4,compound
+14616133,1,furoate,2,furoate,furoate,NN,_,4,compound
+14616133,2,nasal,3,nasal,nasal,JJ,_,4,amod
+14616133,3,spray,4,spray,spray,NN,_,5,nsubj
+14616133,4,improves,5,improves,improve,VBZ,_,0,ROOT
+14616133,5,olfactory,6,olfactory,olfactory,JJ,_,7,amod
+14616133,6,performance,7,performance,performance,NN,_,5,dobj
+14616133,7,in,8,in,in,IN,_,11,case
+14616133,8,seasonal,9,seasonal,seasonal,JJ,_,11,amod
+14616133,9,allergic,10,allergic,allergic,JJ,_,11,amod
+14616133,10,rhinitis,11,rhinitis,rhinitis,NN,_,5,nmod
+14616133,11,.,12,.,.,.,_,5,punct

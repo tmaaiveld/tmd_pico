@@ -1,0 +1,12 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+16879274,0,Nuclear,1,Nuclear,nuclear,JJ,_,2,amod
+16879274,1,fragments,2,fragments,fragment,NNS,_,0,ROOT
+16879274,2,and,3,and,and,CC,_,2,cc
+16879274,3,holes,4,holes,hole,NNS,_,2,conj
+16879274,4,in,5,in,in,IN,_,6,case
+16879274,5,grading,6,grading,grading,NN,_,2,nmod
+16879274,6,of,7,of,of,IN,_,10,case
+16879274,7,breast,8,breast,breast,NN,_,10,compound
+16879274,8,cancer,9,cancer,cancer,NN,_,10,compound
+16879274,9,aspirates,10,aspirates,aspirate,NNS,_,6,nmod
+16879274,10,.,11,.,.,.,_,2,punct

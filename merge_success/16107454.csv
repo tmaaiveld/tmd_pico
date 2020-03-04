@@ -1,0 +1,7 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+16107454,0,NHS,1,NHS,NHS,NNP,_,2,compound
+16107454,1,Direct,2,Direct,Direct,NNP,_,0,ROOT
+16107454,2,and,3,and,and,CC,_,2,cc
+16107454,3,older,4,older,older,JJR,_,5,amod
+16107454,4,people,5,people,people,NNS,_,2,conj
+16107454,5,.,6,.,.,.,_,2,punct

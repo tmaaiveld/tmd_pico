@@ -1,0 +1,16 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+25907208,0,Effect,1,Effect,effect,NN,_,8,nsubj
+25907208,1,of,2,of,of,IN,_,3,mark
+25907208,2,cooling,3,cooling,cool,VBG,_,1,acl
+25907208,3,proparacaine,4,proparacaine,proparacaine,NN,_,7,compound
+25907208,4,0.5,5,0.5,0.5,CD,_,6,compound
+25907208,5,%,6,%,%,NN,_,7,amod
+25907208,6,eye,7,eye,eye,NN,_,3,dobj
+25907208,7,drops,8,drops,drop,VBZ,_,0,ROOT
+25907208,8,on,9,on,on,IN,_,12,case
+25907208,9,patient,10,patient,patient,NN,_,12,nmod:poss
+25907208,10,'s,11,'s,'s,POS,_,10,case
+25907208,11,comfort,12,comfort,comfort,NN,_,8,nmod
+25907208,12,during,13,during,during,IN,_,14,case
+25907208,13,instillation,14,instillation,instillation,NN,_,8,nmod
+25907208,14,.,15,.,.,.,_,8,punct

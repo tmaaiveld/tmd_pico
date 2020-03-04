@@ -1,0 +1,7 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+8627197,0,Antifungal,1,Antifungal,antifungal,JJ,_,3,amod
+8627197,1,pulse,2,pulse,pulse,NN,_,3,compound
+8627197,2,therapy,3,therapy,therapy,NN,_,0,ROOT
+8627197,3,for,4,for,for,IN,_,5,case
+8627197,4,onychomycosis,5,onychomycosis,onychomycosis,NN,_,3,nmod
+8627197,5,.,6,.,.,.,_,3,punct

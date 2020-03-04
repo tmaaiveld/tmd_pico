@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+12080735,0,[,1,-LSB-,-lsb-,-LRB-,_,2,punct
+12080735,1,Effect,2,Effect,effect,NN,_,0,ROOT
+12080735,2,of,3,of,of,IN,_,5,case
+12080735,3,valociclovir,4,valociclovir,valociclovir,NN,_,5,compound
+12080735,4,hydrochloride,5,hydrochloride,hydrochloride,NN,_,2,nmod
+12080735,5,on,6,on,on,IN,_,7,case
+12080735,6,patients,7,patients,patient,NNS,_,2,nmod
+12080735,7,with,8,with,with,IN,_,10,case
+12080735,8,herpes,9,herpes,herpes,NN,_,10,compound
+12080735,9,zoster,10,zoster,zoster,NN,_,7,nmod
+12080735,10,],11,-RSB-,-rsb-,-RRB-,_,2,punct
+12080735,11,.,12,.,.,.,_,2,punct

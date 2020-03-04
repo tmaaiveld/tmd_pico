@@ -1,0 +1,8 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+8069156,0,Bronchodilator,1,Bronchodilator,bronchodilator,NN,_,2,compound
+8069156,1,treatment,2,treatment,treatment,NN,_,0,ROOT
+8069156,2,in,3,in,in,IN,_,4,case
+8069156,3,asthma,4,asthma,asthma,NN,_,2,nmod
+8069156,4,and,5,and,and,CC,_,4,cc
+8069156,5,bronchitis,6,bronchitis,bronchitis,NN,_,4,conj
+8069156,6,.,7,.,.,.,_,2,punct

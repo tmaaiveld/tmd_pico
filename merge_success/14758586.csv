@@ -1,0 +1,17 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+14758586,0,Comparison,1,Comparison,comparison,NN,_,2,compound
+14758586,1,study,2,study,study,NN,_,0,ROOT
+14758586,2,of,3,of,of,IN,_,4,case
+14758586,3,venlafaxine,4,venlafaxine,venlafaxine,NN,_,2,nmod
+14758586,4,and,5,and,and,CC,_,4,cc
+14758586,5,paroxetine,6,paroxetine,paroxetine,NN,_,4,conj
+14758586,6,for,7,for,for,IN,_,9,case
+14758586,7,the,8,the,the,DT,_,9,det
+14758586,8,treatment,9,treatment,treatment,NN,_,2,nmod
+14758586,9,of,10,of,of,IN,_,11,case
+14758586,10,depression,11,depression,depression,NN,_,9,nmod
+14758586,11,in,12,in,in,IN,_,15,case
+14758586,12,elderly,13,elderly,elderly,JJ,_,15,amod
+14758586,13,Chinese,14,Chinese,chinese,JJ,_,15,amod
+14758586,14,inpatients,15,inpatients,inpatient,NNS,_,9,nmod
+14758586,15,.,16,.,.,.,_,2,punct
