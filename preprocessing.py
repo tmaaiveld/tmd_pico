@@ -128,12 +128,12 @@ def import_CoNNL(dir_path, verbose=True):
 
 
 if __name__ == '__main__':
-    make_dirs(DATA_PATH)
-    make_dirs(*[(DATA_PATH / d).mkdir() for d in ['raw','CoNNL', 'word2vec', 'temp']])
 
-    if (DATA_PATH / 'raw.pkl').exists():
-        raw = pd.read_pickle(DATA_PATH / 'raw.pkl')
-        print(f"Importing data from {DATA_PATH / 'raw.pkl'}")
+    make_dirs(*[(DATA_PATH / d) for d in ['raw', 'CoNNL', 'word2vec', 'temp']])
+
+    if (DATA_PATH / 'raw_lab.pkl').exists():
+        raw = pd.read_pickle(DATA_PATH / 'raw_lab.pkl')
+        print(f"Importing data from {DATA_PATH / 'raw_lab.pkl'}")
 
     else:
         try:
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     #     # todo: add sentence number column (sentence tagging)
 
 
-    raw.to_pickle('data/raw.pkl')
+    raw.to_pickle('data/raw_lab.pkl')
     print('Preprocessing complete.')
 
 

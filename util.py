@@ -17,7 +17,7 @@ def get_id(path):
 
 
 def make_dirs(*args):
-    [Path(arg).mkdir(parents=True, exist_ok=True) for arg in args]
+    [arg.mkdir(parents=True, exist_ok=True) for arg in args]
 
 
 def compare_keys(op, d1, d2):
@@ -28,3 +28,6 @@ def compare_keys(op, d1, d2):
         return d1.intersection(d2)
     elif op == 'union':
         return d2.union(d2)
+
+if __name__ == '__main__':
+    make_dirs('data/raw')

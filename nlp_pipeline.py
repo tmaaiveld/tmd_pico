@@ -11,7 +11,7 @@ import nltk
 
 # nltk.download('averaged_perceptron_tagger')
 
-RAW_PKL = Path('data/raw.pkl')
+RAW_PKL = Path('data/raw_lab.pkl')
 TEMP = Path('data/temp')
 
 
