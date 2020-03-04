@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+8602105,0,Concentration,1,Concentration,concentration,NN,_,0,ROOT
+8602105,1,of,2,of,of,IN,_,4,case
+8602105,2,inhaled,3,inhaled,inhale,VBN,_,4,amod
+8602105,3,amiloride,4,amiloride,amiloride,NN,_,1,nmod
+8602105,4,in,5,in,in,IN,_,7,case
+8602105,5,cystic,6,cystic,cystic,JJ,_,7,amod
+8602105,6,fibrosis,7,fibrosis,fibrosis,NN,_,1,nmod
+8602105,7,.,8,.,.,.,_,1,punct

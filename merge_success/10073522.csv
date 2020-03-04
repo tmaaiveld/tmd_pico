@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+10073522,0,Fertility,1,Fertility,fertility,NN,_,2,compound
+10073522,1,outcome,2,outcome,outcome,NN,_,0,ROOT
+10073522,2,after,3,after,after,IN,_,5,case
+10073522,3,systemic,4,systemic,systemic,JJ,_,5,amod
+10073522,4,methotrexate,5,methotrexate,methotrexate,NN,_,2,nmod
+10073522,5,and,6,and,and,CC,_,5,cc
+10073522,6,laparoscopic,7,laparoscopic,laparoscopic,JJ,_,8,amod
+10073522,7,salpingostomy,8,salpingostomy,salpingostomy,NN,_,5,conj
+10073522,8,for,9,for,for,IN,_,11,case
+10073522,9,tubal,10,tubal,tubal,JJ,_,11,amod
+10073522,10,pregnancy,11,pregnancy,pregnancy,NN,_,2,nmod
+10073522,11,.,12,.,.,.,_,2,punct

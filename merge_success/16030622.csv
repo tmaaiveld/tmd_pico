@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+16030622,0,Trichuris,1,Trichuris,trichuris,FW,_,2,compound
+16030622,1,infections,2,infections,infection,NNS,_,0,ROOT
+16030622,2,in,3,in,in,IN,_,4,case
+16030622,3,pigs,4,pigs,pig,NNS,_,2,nmod
+16030622,4,:,5,:,:,:,_,2,punct
+16030622,5,a,6,a,a,DT,_,8,det
+16030622,6,treatment,7,treatment,treatment,NN,_,8,compound
+16030622,7,trial,8,trial,trial,NN,_,2,dep
+16030622,8,in,9,in,in,IN,_,11,case
+16030622,9,the,10,the,the,DT,_,11,det
+16030622,10,field,11,field,field,NN,_,8,nmod
+16030622,11,.,12,.,.,.,_,2,punct

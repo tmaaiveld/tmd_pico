@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+25225698,0,Methylprednisolone,1,Methylprednisolone,methylprednisolone,NN,_,0,ROOT
+25225698,1,in,2,in,in,IN,_,3,case
+25225698,2,patients,3,patients,patient,NNS,_,1,nmod
+25225698,3,with,4,with,with,IN,_,5,case
+25225698,4,cancer,5,cancer,cancer,NN,_,3,nmod
+25225698,5,using,6,using,use,VBG,_,1,acl
+25225698,6,opioids,7,opioids,opioid,NNS,_,6,dobj
+25225698,7,.,8,.,.,.,_,1,punct

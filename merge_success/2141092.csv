@@ -1,0 +1,8 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+2141092,0,Should,1,Should,should,MD,_,4,aux
+2141092,1,angioplasty,2,angioplasty,angioplasty,VB,_,4,aux
+2141092,2,be,3,be,be,VB,_,4,auxpass
+2141092,3,deferred,4,deferred,defer,VBN,_,0,ROOT
+2141092,4,after,5,after,after,IN,_,6,case
+2141092,5,infarction,6,infarction,infarction,NN,_,4,nmod
+2141092,6,?,7,?,?,.,_,4,punct

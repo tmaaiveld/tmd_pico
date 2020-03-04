@@ -1,0 +1,14 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+3076138,0,Comparative,1,Comparative,comparative,JJ,_,2,amod
+3076138,1,effects,2,effects,effect,NNS,_,0,ROOT
+3076138,2,of,3,of,of,IN,_,4,case
+3076138,3,pinacidil,4,pinacidil,pinacidil,NN,_,2,nmod
+3076138,4,and,5,and,and,CC,_,4,cc
+3076138,5,nifedipine,6,nifedipine,nifedipine,NN,_,4,conj
+3076138,6,in,7,in,in,IN,_,9,case
+3076138,7,the,8,the,the,DT,_,9,det
+3076138,8,treatment,9,treatment,treatment,NN,_,2,nmod
+3076138,9,of,10,of,of,IN,_,12,case
+3076138,10,arterial,11,arterial,arterial,JJ,_,12,amod
+3076138,11,hypertension,12,hypertension,hypertension,NN,_,9,nmod
+3076138,12,.,13,.,.,.,_,2,punct

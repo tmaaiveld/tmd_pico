@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+11837240,0,Pacifier,1,Pacifier,pacifier,NN,_,0,ROOT
+11837240,1,as,2,as,as,IN,_,5,case
+11837240,2,a,3,a,a,DT,_,5,det
+11837240,3,risk,4,risk,risk,NN,_,5,compound
+11837240,4,factor,5,factor,factor,NN,_,1,nmod
+11837240,5,for,6,for,for,IN,_,9,case
+11837240,6,acute,7,acute,acute,JJ,_,9,amod
+11837240,7,otitis,8,otitis,otitis,JJ,_,9,amod
+11837240,8,media,9,media,media,NNS,_,5,nmod
+11837240,9,.,10,.,.,.,_,1,punct

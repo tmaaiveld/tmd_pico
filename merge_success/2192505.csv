@@ -1,0 +1,17 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+2192505,0,[,1,-LSB-,-lsb-,-LRB-,_,10,punct
+2192505,1,Cisapride,2,Cisapride,Cisapride,NNP,_,10,dep
+2192505,2,for,3,for,for,IN,_,5,case
+2192505,3,the,4,the,the,DT,_,5,det
+2192505,4,treatment,5,treatment,treatment,NN,_,2,nmod
+2192505,5,of,6,of,of,IN,_,8,case
+2192505,6,irritable,7,irritable,irritable,JJ,_,8,amod
+2192505,7,stomach,8,stomach,stomach,NN,_,5,nmod
+2192505,8,--,9,--,--,:,_,10,punct
+2192505,9,results,10,results,result,NNS,_,0,ROOT
+2192505,10,of,11,of,of,IN,_,14,case
+2192505,11,2,12,2,2,CD,_,14,nummod
+2192505,12,multicenter,13,multicenter,multicenter,JJ,_,14,amod
+2192505,13,studies,14,studies,study,NNS,_,10,nmod
+2192505,14,],15,-RSB-,-rsb-,-RRB-,_,10,punct
+2192505,15,.,16,.,.,.,_,10,punct

@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+9786491,0,Pharmacokinetics,1,Pharmacokinetics,pharmacokinetic,NNS,_,0,ROOT
+9786491,1,of,2,of,of,IN,_,3,case
+9786491,2,cefuroxime,3,cefuroxime,cefuroxime,NN,_,1,nmod
+9786491,3,in,4,in,in,IN,_,6,case
+9786491,4,healthy,5,healthy,healthy,JJ,_,6,amod
+9786491,5,volunteers,6,volunteers,volunteer,NNS,_,1,nmod
+9786491,6,:,7,:,:,:,_,1,punct
+9786491,7,an,8,an,a,DT,_,9,det
+9786491,8,update,9,update,update,VBP,_,1,dep
+9786491,9,.,10,.,.,.,_,1,punct

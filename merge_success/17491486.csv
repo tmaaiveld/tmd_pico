@@ -1,0 +1,12 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+17491486,0,Treatment,1,Treatment,treatment,NN,_,0,ROOT
+17491486,1,of,2,of,of,IN,_,4,case
+17491486,2,periodontal,3,periodontal,periodontal,JJ,_,4,amod
+17491486,3,disease,4,disease,disease,NN,_,1,nmod
+17491486,4,and,5,and,and,CC,_,1,cc
+17491486,5,the,6,the,the,DT,_,7,det
+17491486,6,risk,7,risk,risk,NN,_,1,conj
+17491486,7,of,8,of,of,IN,_,10,case
+17491486,8,preterm,9,preterm,preterm,JJ,_,10,amod
+17491486,9,birth,10,birth,birth,NN,_,7,nmod
+17491486,10,.,11,.,.,.,_,1,punct

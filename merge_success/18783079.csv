@@ -1,0 +1,7 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+18783079,0,[,1,-LSB-,-lsb-,-LRB-,_,4,punct
+18783079,1,The,2,The,the,DT,_,4,det
+18783079,2,CARESS-in-AMI,3,CARESS-in-AMI,caress-in-ami,NN,_,4,compound
+18783079,3,trial,4,trial,trial,NN,_,0,ROOT
+18783079,4,],5,-RSB-,-rsb-,-RRB-,_,4,punct
+18783079,5,.,6,.,.,.,_,4,punct

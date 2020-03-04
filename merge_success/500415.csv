@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+500415,0,New,1,New,New,NNP,_,2,compound
+500415,1,methods,2,methods,method,NNS,_,3,nsubj
+500415,2,applied,3,applied,apply,VBD,_,0,ROOT
+500415,3,to,4,to,to,TO,_,6,case
+500415,4,the,5,the,the,DT,_,6,det
+500415,5,analysis,6,analysis,analysis,NN,_,3,nmod
+500415,6,and,7,and,and,CC,_,6,cc
+500415,7,treatment,8,treatment,treatment,NN,_,6,conj
+500415,8,of,9,of,of,IN,_,11,case
+500415,9,ovarian,10,ovarian,ovarian,JJ,_,11,amod
+500415,10,cancer,11,cancer,cancer,NN,_,6,nmod
+500415,11,.,12,.,.,.,_,3,punct

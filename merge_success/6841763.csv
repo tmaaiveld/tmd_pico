@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+6841763,0,Modifying,1,Modifying,modify,VBG,_,0,ROOT
+6841763,1,the,2,the,the,DT,_,7,det
+6841763,2,Type,3,Type,type,NN,_,7,compound
+6841763,3,A,4,A,a,NN,_,7,compound
+6841763,4,coronary-prone,5,coronary-prone,coronary-prone,NN,_,7,compound
+6841763,5,behavior,6,behavior,behavior,NN,_,7,compound
+6841763,6,pattern,7,pattern,pattern,NN,_,1,dobj
+6841763,7,.,8,.,.,.,_,1,punct

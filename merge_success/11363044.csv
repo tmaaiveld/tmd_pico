@@ -1,0 +1,8 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+11363044,0,Peptide,1,Peptide,peptide,NN,_,2,compound
+11363044,1,T,2,T,t,NN,_,0,ROOT
+11363044,2,:,3,:,:,:,_,2,punct
+11363044,3,negative,4,negative,negative,JJ,_,6,amod
+11363044,4,trial,5,trial,trial,NN,_,6,compound
+11363044,5,result,6,result,result,NN,_,2,dep
+11363044,6,.,7,.,.,.,_,2,punct

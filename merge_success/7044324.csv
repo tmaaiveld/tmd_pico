@@ -1,0 +1,15 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+7044324,0,Treatment,1,Treatment,treatment,NN,_,0,ROOT
+7044324,1,of,2,of,of,IN,_,4,case
+7044324,2,human,3,human,human,JJ,_,4,amod
+7044324,3,tungiasis,4,tungiasis,tungiasis,NN,_,1,nmod
+7044324,4,with,5,with,with,IN,_,6,case
+7044324,5,niridazole,6,niridazole,niridazole,NN,_,1,nmod
+7044324,6,(,7,-LRB-,-lrb-,-LRB-,_,8,punct
+7044324,7,Ambilhar,8,Ambilhar,ambilhar,NN,_,6,appos
+7044324,8,),9,-RRB-,-rrb-,-RRB-,_,8,punct
+7044324,9,a,10,a,a,DT,_,13,det
+7044324,10,double-blind,11,double-blind,double-blind,JJ,_,13,amod
+7044324,11,placebo-controlled,12,placebo-controlled,placebo-controlled,JJ,_,13,amod
+7044324,12,trial,13,trial,trial,NN,_,6,dep
+7044324,13,.,14,.,.,.,_,1,punct

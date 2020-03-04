@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+15160783,0,Role,1,Role,role,NN,_,0,ROOT
+15160783,1,of,2,of,of,IN,_,5,case
+15160783,2,the,3,the,the,DT,_,5,det
+15160783,3,placebo,4,placebo,placebo,NN,_,5,compound
+15160783,4,effect,5,effect,effect,NN,_,1,nmod
+15160783,5,in,6,in,in,IN,_,7,mark
+15160783,6,evaluating,7,evaluating,evaluate,VBG,_,5,acl
+15160783,7,antidepressant,8,antidepressant,antidepressant,JJ,_,9,amod
+15160783,8,efficacy,9,efficacy,efficacy,NN,_,7,dobj
+15160783,9,.,10,.,.,.,_,1,punct

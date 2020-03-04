@@ -1,0 +1,15 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4220015,0,[,1,-LSB-,-lsb-,-LRB-,_,3,punct
+4220015,1,Prognostic,2,Prognostic,prognostic,JJ,_,3,amod
+4220015,2,experiences,3,experiences,experience,NNS,_,0,ROOT
+4220015,3,in,4,in,in,IN,_,8,case
+4220015,4,the,5,the,the,DT,_,8,det
+4220015,5,long-term,6,long-term,long-term,JJ,_,8,amod
+4220015,6,differential,7,differential,differential,JJ,_,8,amod
+4220015,7,therapy,8,therapy,therapy,NN,_,3,nmod
+4220015,8,of,9,of,of,IN,_,12,case
+4220015,9,chronic,10,chronic,chronic,JJ,_,12,amod
+4220015,10,aggressive,11,aggressive,aggressive,JJ,_,12,amod
+4220015,11,hepatitides,12,hepatitides,hepatitide,NNS,_,8,nmod
+4220015,12,],13,-RSB-,-rsb-,-RRB-,_,3,punct
+4220015,13,.,14,.,.,.,_,3,punct

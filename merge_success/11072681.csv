@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+11072681,0,[,1,-LSB-,-lsb-,-LRB-,_,4,punct
+11072681,1,New,2,New,New,NNP,_,4,compound
+11072681,2,therapeutic,3,therapeutic,therapeutic,JJ,_,4,amod
+11072681,3,approaches,4,approaches,approach,NNS,_,0,ROOT
+11072681,4,in,5,in,in,IN,_,8,case
+11072681,5,irritable,6,irritable,irritable,JJ,_,8,amod
+11072681,6,bowel,7,bowel,bowel,NN,_,8,compound
+11072681,7,syndrome,8,syndrome,syndrome,NN,_,4,nmod
+11072681,8,],9,-RSB-,-rsb-,-RRB-,_,4,punct
+11072681,9,.,10,.,.,.,_,4,punct

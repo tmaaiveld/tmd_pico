@@ -1,0 +1,9 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+5980490,0,Alcoholism,1,Alcoholism,alcoholism,NN,_,0,ROOT
+5980490,1,",",2,",",",",",",_,1,punct
+5980490,2,avoidance,3,avoidance,avoidance,NN,_,4,compound
+5980490,3,learning,4,learning,learning,NN,_,1,conj
+5980490,4,and,5,and,and,CC,_,1,cc
+5980490,5,emotional,6,emotional,emotional,JJ,_,7,amod
+5980490,6,responsiveness,7,responsiveness,responsiveness,NN,_,1,conj
+5980490,7,.,8,.,.,.,_,1,punct

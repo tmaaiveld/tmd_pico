@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4407133,0,Letter,1,Letter,letter,NN,_,0,ROOT
+4407133,1,:,2,:,:,:,_,1,punct
+4407133,2,Cephaloridine,3,Cephaloridine,cephaloridine,NN,_,1,dep
+4407133,3,and,4,and,and,CC,_,3,cc
+4407133,4,gentamicin,5,gentamicin,gentamicin,NN,_,3,conj
+4407133,5,in,6,in,in,IN,_,7,case
+4407133,6,prophylaxis,7,prophylaxis,prophylaxis,NN,_,3,nmod
+4407133,7,of,8,of,of,IN,_,11,case
+4407133,8,surgical,9,surgical,surgical,JJ,_,11,amod
+4407133,9,wound,10,wound,wound,NN,_,11,compound
+4407133,10,infection,11,infection,infection,NN,_,7,nmod
+4407133,11,.,12,.,.,.,_,1,punct

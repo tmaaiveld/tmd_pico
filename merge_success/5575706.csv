@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+5575706,0,Triamcinolone,1,Triamcinolone,triamcinolone,NN,_,2,compound
+5575706,1,acetonide,2,acetonide,acetonide,NN,_,0,ROOT
+5575706,2,in,3,in,in,IN,_,5,case
+5575706,3,the,4,the,the,DT,_,5,det
+5575706,4,treatment,5,treatment,treatment,NN,_,2,nmod
+5575706,5,of,6,of,of,IN,_,7,case
+5575706,6,bursitis,7,bursitis,bursitis,NN,_,5,nmod
+5575706,7,and,8,and,and,CC,_,7,cc
+5575706,8,other,9,other,other,JJ,_,11,amod
+5575706,9,foot,10,foot,foot,NN,_,11,compound
+5575706,10,disorders,11,disorders,disorder,NNS,_,7,conj
+5575706,11,.,12,.,.,.,_,2,punct

@@ -1,0 +1,11 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+2420348,0,Hypotension,1,Hypotension,hypotension,NN,_,0,ROOT
+2420348,1,in,2,in,in,IN,_,3,case
+2420348,2,response,3,response,response,NN,_,1,nmod
+2420348,3,to,4,to,to,TO,_,5,case
+2420348,4,iloprost,5,iloprost,iloprost,NN,_,3,nmod
+2420348,5,",",6,",",",",",",_,5,punct
+2420348,6,a,7,a,a,DT,_,9,det
+2420348,7,prostacyclin,8,prostacyclin,prostacyclin,NN,_,9,compound
+2420348,8,analogue,9,analogue,analogue,NN,_,5,appos
+2420348,9,.,10,.,.,.,_,1,punct

@@ -1,0 +1,12 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+184069,0,Effect,1,Effect,effect,NN,_,0,ROOT
+184069,1,of,2,of,of,IN,_,3,case
+184069,2,radiotherapy,3,radiotherapy,radiotherapy,NN,_,1,nmod
+184069,3,on,4,on,on,IN,_,7,case
+184069,4,blood,5,blood,blood,NN,_,7,compound
+184069,5,lymphocyte,6,lymphocyte,lymphocyte,NN,_,7,compound
+184069,6,population,7,population,population,NN,_,1,nmod
+184069,7,in,8,in,in,IN,_,10,case
+184069,8,mammary,9,mammary,mammary,JJ,_,10,amod
+184069,9,carcinoma,10,carcinoma,carcinoma,NN,_,7,nmod
+184069,10,.,11,.,.,.,_,1,punct

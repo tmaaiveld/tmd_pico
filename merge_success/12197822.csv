@@ -1,0 +1,13 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+12197822,0,Should,1,Should,should,MD,_,3,aux
+12197822,1,we,2,we,we,PRP,_,3,nsubj
+12197822,2,debrief,3,debrief,debrief,VB,_,0,ROOT
+12197822,3,and,4,and,and,CC,_,3,cc
+12197822,4,counsel,5,counsel,counsel,NN,_,6,compound
+12197822,5,people,6,people,people,NNS,_,3,conj
+12197822,6,who,7,who,who,WP,_,9,nsubj
+12197822,7,have,8,have,have,VBP,_,9,aux
+12197822,8,had,9,had,have,VBN,_,6,acl:relcl
+12197822,9,psychological,10,psychological,psychological,JJ,_,11,amod
+12197822,10,shock,11,shock,shock,NN,_,9,dobj
+12197822,11,?,12,?,?,.,_,3,punct

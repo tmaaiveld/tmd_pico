@@ -1,0 +1,14 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+23773944,0,[,1,-LSB-,-lsb-,-LRB-,_,2,punct
+23773944,1,Closure,2,Closure,closure,NN,_,0,ROOT
+23773944,2,of,3,of,of,IN,_,5,case
+23773944,3,persistent,4,persistent,persistent,JJ,_,5,amod
+23773944,4,foramen,5,foramen,foraman,NNS,_,2,nmod
+23773944,5,ovale,6,ovale,ovale,SYM,_,10,dep
+23773944,6,-,7,-,-,:,_,10,punct
+23773944,7,the,8,the,the,DT,_,10,det
+23773944,8,last,9,last,last,JJ,_,10,amod
+23773944,9,closure,10,closure,closure,NN,_,5,dep
+23773944,10,?,11,?,?,.,_,10,punct
+23773944,11,],12,-RSB-,-rsb-,-RRB-,_,2,punct
+23773944,12,.,1,.,.,.,_,0,ROOT

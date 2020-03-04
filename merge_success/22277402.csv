@@ -1,0 +1,15 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+22277402,0,[,1,-LSB-,-lsb-,-LRB-,_,4,punct
+22277402,1,Branch,2,Branch,Branch,NNP,_,4,compound
+22277402,2,atheromatous,3,atheromatous,atheromatous,JJ,_,4,amod
+22277402,3,disease,4,disease,disease,NN,_,0,ROOT
+22277402,4,:,5,:,:,:,_,4,punct
+22277402,5,prognosis,6,prognosis,prognosis,NN,_,4,dep
+22277402,6,and,7,and,and,CC,_,6,cc
+22277402,7,management,8,management,management,NN,_,6,conj
+22277402,8,.,9,.,.,.,_,4,punct
+22277402,9,The,1,The,the,DT,_,3,det
+22277402,10,SPS3,2,SPS3,sps3,NN,_,3,compound
+22277402,11,experience,3,experience,experience,NN,_,0,ROOT
+22277402,12,],4,-RSB-,-rsb-,-RRB-,_,3,punct
+22277402,13,.,5,.,.,.,_,3,punct

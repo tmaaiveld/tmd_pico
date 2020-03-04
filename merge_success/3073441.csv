@@ -1,0 +1,16 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+3073441,0,[,1,-LSB-,-lsb-,-LRB-,_,3,punct
+3073441,1,Controlled,2,Controlled,control,VBN,_,3,amod
+3073441,2,study,3,study,study,NN,_,0,ROOT
+3073441,3,of,4,of,of,IN,_,7,case
+3073441,4,the,5,the,the,DT,_,7,det
+3073441,5,quinidine-amiodarone,6,quinidine-amiodarone,quinidine-amiodarone,JJ,_,7,amod
+3073441,6,combination,7,combination,combination,NN,_,3,nmod
+3073441,7,in,8,in,in,IN,_,10,case
+3073441,8,the,9,the,the,DT,_,10,det
+3073441,9,reversal,10,reversal,reversal,NN,_,7,nmod
+3073441,10,of,11,of,of,IN,_,13,case
+3073441,11,auricular,12,auricular,auricular,JJ,_,13,amod
+3073441,12,fibrillation,13,fibrillation,fibrillation,NN,_,10,nmod
+3073441,13,],14,-RSB-,-rsb-,-RRB-,_,3,punct
+3073441,14,.,15,.,.,.,_,3,punct

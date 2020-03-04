@@ -1,0 +1,16 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+4353587,0,A,1,A,a,DT,_,2,det
+4353587,1,study,2,study,study,NN,_,0,ROOT
+4353587,2,of,3,of,of,IN,_,6,case
+4353587,3,postoperative,4,postoperative,postoperative,JJ,_,6,amod
+4353587,4,cytostatic,5,cytostatic,cytostatic,JJ,_,6,amod
+4353587,5,medication,6,medication,medication,NN,_,2,nmod
+4353587,6,in,7,in,in,IN,_,8,case
+4353587,7,patients,8,patients,patient,NNS,_,6,nmod
+4353587,8,with,9,with,with,IN,_,11,case
+4353587,9,operable,10,operable,operable,JJ,_,11,amod
+4353587,10,carcinoma,11,carcinoma,carcinoma,NN,_,8,nmod
+4353587,11,of,12,of,of,IN,_,14,case
+4353587,12,the,13,the,the,DT,_,14,det
+4353587,13,lung,14,lung,lung,NN,_,11,nmod
+4353587,14,.,15,.,.,.,_,2,punct

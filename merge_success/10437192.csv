@@ -1,0 +1,17 @@
+doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
+10437192,0,Clinical,1,Clinical,clinical,JJ,_,2,amod
+10437192,1,observation,2,observation,observation,NN,_,0,ROOT
+10437192,2,on,3,on,on,IN,_,4,case
+10437192,3,treatment,4,treatment,treatment,NN,_,2,nmod
+10437192,4,of,5,of,of,IN,_,8,case
+10437192,5,obstinate,6,obstinate,obstinate,JJ,_,8,amod
+10437192,6,heart,7,heart,heart,NN,_,8,compound
+10437192,7,failure,8,failure,failure,NN,_,4,nmod
+10437192,8,by,9,by,by,IN,_,10,mark
+10437192,9,supplementing,10,supplementing,supplement,VBG,_,2,dep
+10437192,10,qi,11,qi,qi,NN,_,10,dobj
+10437192,11,and,12,and,and,CC,_,10,cc
+10437192,12,activating,13,activating,activate,VBG,_,10,conj
+10437192,13,blood,14,blood,blood,NN,_,15,compound
+10437192,14,flow,15,flow,flow,NN,_,13,dobj
+10437192,15,.,16,.,.,.,_,2,punct
