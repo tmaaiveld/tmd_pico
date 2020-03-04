@@ -1,33 +1,75 @@
+Data:
+4,993 abstracts - only Starting Spans contains all fully annotated data.
+Train/test split maintained for all docs (~4700/190)
+NOTE: ebm_nlp_2_00 seems to have differing numbers of tokens (in /documents) and labels (in /annotated).
 
 Input:
 - Raw data from EBM-NLP (to retrieve the labels)
+    * now directly imported from tarfile in data/raw and saved in data/raw.pkl.
+
 - Features from StanfordCoreNLP
-- construct more features? more parsers, (latent) representations?
+    * currently seems very difficult to achieve because of tokenizer disagreement.
+    * tried inputting tokenized data, also returned a different tokenization.
+    * probably need to use a different method to parse dependencies for the existing tokenization.
 
-    * Potential challenges:
-    - different tokenizers may produce token columns of different length.
-      Can be addressed by dropping NA rows, imputation or specific fixing depending on severity of issue.
-    - string extraction the way Roser described it is not the way the data are labeled.
-      Possibly might need to add sequence start, contents, end markers to data before it can be used for ML
-      or perhaps not all methods require these markers? research existing implementations more.
 
-Preprocessing should yield a dataframe containing a [document, token] level index, tokens, features, and one-hot-coded
-binary columns for each label and/or a column specifying all labels assigned
+Processing pipeline:
+- preprocessing script imports raw data into tokenized, labeled sequences
+- next step: NLP pipeline
+-> lowercase
+-> punctuation handling
+-> stop word removal?? (probably)
+-> number replacement (strings like ['0.01','2'] replaced with a tag)? note: not amod
+more steps?
+
+- Note that removing words also results in removal of sequence labels, which makes the postprocessing more difficult.
+  might be better to avoid and stick to only replacing values with tags such as 'math punctuation' or
+
+- POS tagging column (use nltk)
+
+
+Feature extraction:
+Only approaches that allow for input of tokenized data can be easily matched to the labeling annotations in the data.
+We could ask Roser about how to handle this, dependency relationship approaches seem very difficult.
+
+Simple features:
+Lag column(s) (up/down, document level)
+NLTK POS tagging
+
+Complex features:
+StanfordNLP: tough to extract/align, cannot take tokenized data
+Other deprel parser (nltk built-in)?
+Word2Vec: data must be one hot coded before applying algorithm to preserve labeling
+
 
 Model:
 Potential approaches:
-Sequential RNN network (keras)
-- google colab contains an example.
+Tree forest w/ skl (straight-forward and interesting)
 
 Bagging/boosting with libraries? (XGBoost)
 
-different tree models?
+Decent approach for the paper:
+Prepare 2-3 feature sets using different approaches (deprel parsing, word2vec), train model on subsets of the features
+and compare / see how useful they are. Comparison of F-scores, etc. makes for useful results.
 
-?
+
+Post-processing:
+Convert binary columns to B -, I -, E - sequences for each PIO cat
+could try a simple procedure like unifying labels broken by less than 1-2 words
 
 Output:
-Assigned labels
+Extracted P, I, O sequences associated with an abstract
+Useful for PubMed/other database search engine
+Emphasis on high recall, completeness of sequences
+Different goal from EBM-NLP authors
 
-- multi-class problem over several variables?
-- binary-class problem over each variable?
-- sequence extraction problem?
+
+LINKS
+Topic modeling
+https://en.wikipedia.org/wiki/Topic_model
+
+Tutorial shows a different sequence of steps than our data but overall approach is the same
+https://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
+
+word2vec implementation with tokenized input. Also contains some interesting processing (in R)
+https://github.com/h2oai/h2o-3/blob/master/h2o-r/demos/rdemo.word2vec.craigslistjobtitles.R

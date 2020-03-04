@@ -2,78 +2,100 @@ import tarfile
 import zipfile
 from pathlib import Path
 import pandas as pd
-from util import c, get_id, create_folders
+from util import c, get_id, create_folders, compare_keys
 
 # these will end up in a params dict somewhere
-RAW_DATA_PATH = Path('data/raw')
-STANFORD_DATA_PATH = Path('data/CoNNL')
+DATA_PATH = Path('data')
 STANFORD_COLS = ["Sent_pos", "Word", "Lemma", "UPOS", "XPOS", "HEAD", "DEPREL"]
-EBM_PHASES = ['hierarchical_labels', 'starting_spans']
-# SET = 'train' # 'test/gold'
+PHASE = 'starting_spans' # 'hierarchical_labels'
 CATS = ['interventions', 'outcomes', 'participants']
 
 
-def import_raw(dir_path):
+def import_raw(path, phase, verbose=True):
     """
-
-    - extracting directly from tarfile more user-friendly
-    - only testing for EBM-NLP 1. Authors use 2?
+    Function extract EBM-NLP data directly from tarfile.
+    :param path: a Path object like Path('path/to/tarfile.tar.gz')
+    :param phase: desired phase of the experiment
+    :param verbose: whether to print debug information
+    :return: An indexed DF of unprocessed text entries and
     """
+    temp = Path('data/temp')
+    root = path.name.split('.')[0]
 
-    dir_path = Path('data/raw/ebm_nlp_1_00') # todo: update
+    try:
+        tar = tarfile.open(path.resolve())
+    except:
+        raise FileNotFoundError('Place the tarfile in the /data/raw directory.')
 
-    doc_fnames = (dir_path / 'documents/').glob('*.tokens')
+    if verbose: print(f'Extracting {path.name}. This may take a few minutes.')
 
-    rows = {f.name.split('.')[0]: f.open().read().split() for f in doc_fnames}
-    token_s = pd.DataFrame.from_dict(rows, orient='index').stack()
+    tar.extractall(path=temp)
+    temp = temp / root
+
+    doc_fnames = list((temp / 'documents/').glob('*.tokens'))
+
+    if verbose: print(f"parsing {len(doc_fnames)} documents from {path / 'documents/'}.")
+
+    tokens = {f.name.split('.')[0]: f.open(encoding='latin-1').read().split() for f in doc_fnames}
+    token_s = prep_tokens(tokens)
     token_s.name = 'Word'
     token_s.index.names = ['doc', 'idx']
+    token_s.value_counts().to_csv('data/raw_vocab.csv')
 
     pio = dict.fromkeys(CATS)
+    n_imported_rows = 0
 
     for cat in pio:
-        train_fnames = c([dir_path.glob(f'annotations/aggregated/{phase}/{cat}/train/*.ann')
-                         for phase in EBM_PHASES])
-        test_fnames = c([dir_path.glob(f'annotations/aggregated/{phase}/{cat}/test/gold/*.ann')
-                         for phase in EBM_PHASES])
+        train_fnames = list(temp.glob(f'annotations/aggregated/{phase}/{cat}/train/*.ann'))
+        test_fnames = list(temp.glob(f'annotations/aggregated/{phase}/{cat}/test/crowd/*.ann'))
 
-        pio[cat] = {
-            **{f.name.split('_')[0]: f.open().read().split(',') for f in train_fnames},
-            **{f.name.split('_')[0]: f.open().read().split(',') for f in test_fnames}
-        }
+        # split parameters differ for ebm_nlp_1_00 ['_'] and ebm_nl_2_00
+        # split_params = ['_', ','] if dir_path.name == 'ebm_nlp_1_00' else ['.','\n']
 
-        # todo: imported both datasets for now. train/test split < discussion topic
+        pio[cat] = {f.name.split('_')[0]: f.open().read().split(',')
+                    for f in train_fnames + test_fnames}
 
-    # todo: figure out how to handle test/train split maintained:
-        # option 1: maintain split in two dfs
-        # option 2: group dataset and add a test/train column
-        # option 3: create our own train/test split using the document indices
+        n_imported_rows += sum([len(l) for l in pio[cat].values()])
 
-    # todo: initial match looks alright
-    # print(pio['interventions']['9989713'])
-    # print(token_s.xs('9989713'))
-    #
-    # print(len(pio['interventions']['9989713']))
-    # print(len(token_s.xs('9989713')))
+        print(f'Successfully parsed {cat}.')
 
-    # todo: some assert testing to check if data are properly indexed
+    tar.close()
+    # token_s = token_s.loc[(list(pio[cat].keys()),slice(None))] # todo: necessary for ebm_nlp_2
 
-    df = pd.concat([pd.DataFrame.from_dict(pio[cat], orient='index').stack() for cat in CATS], axis=1)
-    df.columns = CATS
-    df.index.names = ['doc', 'idx']
+    try:
+        assert len(token_s) == n_imported_rows / len(pio)
 
-    df = pd.merge(token_s, df, how='left', on=['doc','idx'])
+    except AssertionError:
+        print(f'length of token series: {len(token_s)}')
+        print(f'number of imported label rows: {n_imported_rows / len(pio)}')
+        raise AssertionError('Merge failed. Difference detected in the number of tokens and labels.\n',
+                             'Note: this should not be considered an error for ebm_nlp_2_00.tar.gz')
 
-    # todo: some missing values...
+    labels_df = pd.concat(
+        [pd.DataFrame.from_dict(pio[cat], orient='index').stack() for cat in pio],
+        axis=1)
 
-    print(f'{df.isna().sum()} values were missing.')
+    labels_df.columns = CATS
+    labels_df.index.names = ['doc', 'idx']
+
+    df = pd.merge(token_s, labels_df, how='inner', on=['doc','idx']) # 'inner' for ebm_nlp_2, differing number of docs
+
+    if verbose:
+        print(f'Imported {len(df.index)} tokens.')
+        print(f'{df.isna().sum().sum()} values were missing from the labels.')
 
     return df
 
 
-def import_CoNNL(dir_path):
+def prep_tokens(tok_dict):
+    s = pd.DataFrame.from_dict(tok_dict, orient='index').stack()
+
+    return s
+
+
+def import_CoNNL(dir_path, verbose=True):
     """
-    Preprocessing for the CoNNL features. Could use some refinement.
+    Preprocessing for the CoNNL features.
     """
 
     sep_dfs = []
@@ -100,30 +122,56 @@ def import_CoNNL(dir_path):
 
     # rewrite index column # todo: not implemented
 
+    # process variables where needed todo: not implemented
+
     return df
 
 
 if __name__ == '__main__':
 
-    create_folders(RAW_DATA_PATH, STANFORD_DATA_PATH)
+    create_folders(*[DATA_PATH / f for f in ['raw','CoNNL', 'word2vec', 'temp']])
 
-    labels = import_raw(RAW_DATA_PATH)
-    stanford = import_CoNNL(STANFORD_DATA_PATH)
+    if (DATA_PATH / 'raw.pkl').exists():
+        raw = pd.read_pickle(DATA_PATH / 'raw.pkl')
+        print(f"Importing data from {DATA_PATH / 'raw.pkl'}")
 
-    test_merge = pd.merge(labels, stanford, how='left', on=['doc','idx'])
+    else:
+        try:
+            raw = import_raw(DATA_PATH / 'raw/ebm_nlp_1_00.tar.gz', PHASE, verbose=True)
+            # stanford = import_CoNNL(DATA_PATH / 'CoNNL', verbose=False)
 
-    print(test_merge)
+            assert len(raw) > 0 # and len(stanford) > 0
 
-    print(f'{test_merge.isna().sum()} values were missing from the test merge.')
-    print(test_merge['Word_x', 'Word_y'])
+        except AssertionError:
+            raise Exception('Import failed. Ensure ebm_nlp_*_00.tar.gz is placed in data/raw.')
 
-    # todo: small amount of data loss, BUT data are currently not properly aligned! (i.e. 5000+ mismatched rows). < discussion topic
-    # import the  data from csv in run.py
-    # count na's in each doc, filter docs with na's, these ones have crappy alignment
-    # figure out which characters/tokens are causing the problem, implement a fix
-        # wordwise alignment would be difficult...
+    doc_ids = len(raw.index.get_level_values('doc'))
 
-    test_merge.to_csv('data/test_merge.csv')
-    test_merge.to_pickle('data/test_merge.pkl')
+    # todo: add sentence number column (sentence tagging)
 
-    # raw_path = pre.process_data(RAW_DATA_PATH, 'raw.csv', preprocessing=pre.raw)
+
+    raw.to_pickle('data/raw.pkl')
+    print('Preprocessing complete.')
+
+
+
+
+
+
+
+
+
+
+
+
+    # stanford.to_pickle('data/stanford.pkl')
+    # test_merge = pd.merge(raw, stanford, how='left', on=['doc','idx'])
+    #
+    # print(test_merge)
+    # print(f'\nMissing values: \n\n {test_merge.isna().sum()} ')
+    # print(f"\ndocuments remaining after merge: {}")
+    #
+    # test_merge.to_csv('data/test_merge.csv')
+    # test_merge.to_pickle('data/test_merge.pkl')
+    #
+    # # delete temp folder contents
