@@ -34,11 +34,15 @@ We could ask Roser about how to handle this, dependency relationship approaches 
 Simple features:
 Lag column(s) (up/down, document level)
 NLTK POS tagging
+Model needs an explicit understanding of sentence demarcation.
 
 Complex features:
 StanfordNLP: tough to extract/align, cannot take tokenized data
 Other deprel parser (nltk built-in)?
 Word2Vec: data must be one hot coded before applying algorithm to preserve labeling
+- word2vec outputs a lookup table for probabilities -> how to transform these to features?
+- probably not add them raw. possibly use KNN or another unsupervised clustering algorithm to generate
+  a cluster label column.
 
 
 Model:
@@ -62,7 +66,8 @@ Useful for PubMed/other database search engine
 Emphasis on high recall, completeness of sequences
 Different goal from EBM-NLP authors
 
-Sequences could be extracted using aggregation and filtering techniques. E.g. a sliding window that annotates
+depending on how we handle stop word removal etc...
+- Sequences could be extracted using aggregation and filtering techniques. E.g. a sliding window that annotates
 something as 1 if, for example, 3/7 values in the surrounding window are 1.
 
 Evaluation:
@@ -70,7 +75,12 @@ Apart from f-scores and model performance...
 Error analysis: Print generated labels for ca. 100 abstracts and review them, implement fixes for common errors
 
 
+
 LINKS
+overview of preprocessing.
+https://www.quora.com/Why-should-punctuation-be-removed-in-Word2vec
+https://www.quora.com/How-does-word2vec-work-Can-someone-walk-through-a-specific-example/answer/Ajit-Rajasekharan
+
 Topic modeling
 https://en.wikipedia.org/wiki/Topic_model
 
