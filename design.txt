@@ -18,12 +18,13 @@ Processing pipeline:
 - next step: NLP pipeline
 -> lowercase
 -> punctuation handling
--> stop word removal?? (probably)
+-> stop word removal / tagging??
 -> number replacement (strings like ['0.01','2'] replaced with a tag)? note: not amod
 more steps?
 
 - Note that removing words also results in removal of sequence labels, which makes the postprocessing more difficult.
-  might be better to avoid and stick to only replacing values with tags such as 'math punctuation' or
+  might be better to avoid and stick to only replacing values with tags such as 'math punctuation'?
+
 
 - POS tagging column (use nltk)
 
@@ -62,6 +63,13 @@ Extracted P, I, O sequences associated with an abstract
 Useful for PubMed/other database search engine
 Emphasis on high recall, completeness of sequences
 Different goal from EBM-NLP authors
+
+Sequences could be extracted using aggregation and filtering techniques. E.g. a sliding window that annotates
+something as 1 if, for example, 3/7 values in the surrounding window are 1.
+
+Evaluation:
+Apart from f-scores and model performance...
+Error analysis: Print generated labels for ca. 100 abstracts and review them, implement fixes for common errors
 
 
 LINKS
