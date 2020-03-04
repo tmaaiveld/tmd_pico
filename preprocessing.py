@@ -17,7 +17,7 @@ def import_raw(path, phase, verbose=True):
     :param path: a Path object like Path('path/to/tarfile.tar.gz')
     :param phase: desired phase of the experiment
     :param verbose: whether to print debug information
-    :return: An indexed DF of unprocessed text entries and
+    :return: An indexed DF of unprocessed text entries and attached labels.
     """
     temp = Path('data/temp')
     root = path.name.split('.')[0]
