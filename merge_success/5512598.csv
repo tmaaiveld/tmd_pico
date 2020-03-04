@@ -1,9 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-5512598,0,Effects,1,Effects,effect,NNS,_,0,ROOT
-5512598,1,of,2,of,of,IN,_,4,case
-5512598,2,progressive,3,progressive,progressive,JJ,_,4,amod
-5512598,3,relaxation,4,relaxation,relaxation,NN,_,1,nmod
-5512598,4,on,5,on,on,IN,_,7,case
-5512598,5,autonomic,6,autonomic,autonomic,JJ,_,7,amod
-5512598,6,processes,7,processes,process,NNS,_,1,nmod
-5512598,7,.,8,.,.,.,_,1,punct

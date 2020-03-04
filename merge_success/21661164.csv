@@ -1,8 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-21661164,0,[,1,-LSB-,-lsb-,-LRB-,_,5,punct
-21661164,1,Diabetic,2,Diabetic,Diabetic,NNP,_,5,compound
-21661164,2,retinopathy,3,retinopathy,retinopathy,NN,_,5,compound
-21661164,3,candesartan,4,candesartan,candesartan,NN,_,5,compound
-21661164,4,trial,5,trial,trial,NN,_,0,ROOT
-21661164,5,],6,-RSB-,-rsb-,-RRB-,_,5,punct
-21661164,6,.,7,.,.,.,_,5,punct

@@ -1,7 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-5431057,0,Para-anaesthetic,1,Para-anaesthetic,para-anaesthetic,JJ,_,2,amod
-5431057,1,headache,2,headache,headache,NN,_,0,ROOT
-5431057,2,in,3,in,in,IN,_,5,case
-5431057,3,female,4,female,female,JJ,_,5,amod
-5431057,4,patients,5,patients,patient,NNS,_,2,nmod
-5431057,5,.,6,.,.,.,_,2,punct

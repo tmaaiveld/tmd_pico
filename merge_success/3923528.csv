@@ -1,9 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-3923528,0,New,1,New,New,NNP,_,3,amod
-3923528,1,drug,2,drug,drug,NN,_,3,compound
-3923528,2,trials,3,trials,trial,NNS,_,0,ROOT
-3923528,3,in,4,in,in,IN,_,7,case
-3923528,4,attention,5,attention,attention,NN,_,7,compound
-3923528,5,deficit,6,deficit,deficit,NN,_,7,compound
-3923528,6,disorder,7,disorder,disorder,NN,_,3,nmod
-3923528,7,.,8,.,.,.,_,3,punct

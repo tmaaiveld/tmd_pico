@@ -1,8 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-1697487,0,Trials,1,Trials,trial,NNS,_,0,ROOT
-1697487,1,and,2,and,and,CC,_,1,cc
-1697487,2,tribulations,3,tribulations,tribulation,NNS,_,1,conj
-1697487,3,in,4,in,in,IN,_,6,case
-1697487,4,speech,5,speech,speech,NN,_,6,compound
-1697487,5,therapy,6,therapy,therapy,NN,_,1,nmod
-1697487,6,.,7,.,.,.,_,1,punct

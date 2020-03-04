@@ -1,8 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-7003882,0,[,1,-LSB-,-lsb-,-LRB-,_,5,punct
-7003882,1,Median,2,Median,median,JJ,_,5,amod
-7003882,2,and,3,and,and,CC,_,2,cc
-7003882,3,mediolateral,4,mediolateral,mediolateral,JJ,_,2,conj
-7003882,4,episiotomy,5,episiotomy,episiotomy,NN,_,0,ROOT
-7003882,5,],6,-RSB-,-rsb-,-RRB-,_,5,punct
-7003882,6,.,7,.,.,.,_,5,punct

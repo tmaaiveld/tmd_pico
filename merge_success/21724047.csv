@@ -1,7 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-21724047,0,Nepafenac,1,Nepafenac,Nepafenac,NNP,_,0,ROOT
-21724047,1,for,2,for,for,IN,_,5,case
-21724047,2,epiretinal,3,epiretinal,epiretinal,JJ,_,5,amod
-21724047,3,membrane,4,membrane,membrane,NN,_,5,compound
-21724047,4,surgery,5,surgery,surgery,NN,_,1,nmod
-21724047,5,.,6,.,.,.,_,1,punct

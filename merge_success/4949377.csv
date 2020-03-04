@@ -1,6 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-4949377,0,Miotics,1,Miotics,miotic,NNS,_,0,ROOT
-4949377,1,in,2,in,in,IN,_,4,case
-4949377,2,cataract,3,cataract,cataract,NN,_,4,compound
-4949377,3,surgery,4,surgery,surgery,NN,_,1,nmod
-4949377,4,.,5,.,.,.,_,1,punct

@@ -1,6 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-8676619,0,Fludarabine,1,Fludarabine,fludarabine,NN,_,0,ROOT
-8676619,1,in,2,in,in,IN,_,4,case
-8676619,2,chronic,3,chronic,chronic,JJ,_,4,amod
-8676619,3,leukaemia,4,leukaemia,leukaemia,NN,_,1,nmod
-8676619,4,.,5,.,.,.,_,1,punct

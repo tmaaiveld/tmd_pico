@@ -1,7 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-9267377,0,Cranberry,1,Cranberry,cranberry,NN,_,2,compound
-9267377,1,concentrate,2,concentrate,concentrate,NN,_,0,ROOT
-9267377,2,:,3,:,:,:,_,2,punct
-9267377,3,UTI,4,UTI,uti,NN,_,5,compound
-9267377,4,prophylaxis,5,prophylaxis,prophylaxis,NN,_,2,dep
-9267377,5,.,6,.,.,.,_,2,punct

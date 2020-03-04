@@ -1,7 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-8667967,0,Tight-fitting,1,Tight-fitting,tight-fitting,JJ,_,2,amod
-8667967,1,underwear,2,underwear,underwear,NN,_,0,ROOT
-8667967,2,and,3,and,and,CC,_,2,cc
-8667967,3,sperm,4,sperm,sperm,NN,_,5,compound
-8667967,4,quality,5,quality,quality,NN,_,2,conj
-8667967,5,.,6,.,.,.,_,2,punct

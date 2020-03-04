@@ -1,8 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-4346973,0,Dipyrone,1,Dipyrone,Dipyrone,NNP,_,0,ROOT
-4346973,1,for,2,for,for,IN,_,3,case
-4346973,2,treatment,3,treatment,treatment,NN,_,1,nmod
-4346973,3,of,4,of,of,IN,_,6,case
-4346973,4,post-operative,5,post-operative,post-operative,JJ,_,6,amod
-4346973,5,pain,6,pain,pain,NN,_,3,nmod
-4346973,6,.,7,.,.,.,_,1,punct

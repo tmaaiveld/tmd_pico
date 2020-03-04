@@ -1,5 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-6124226,0,Neuroleptics,1,Neuroleptics,neuroleptic,NNS,_,0,ROOT
-6124226,1,and,2,and,and,CC,_,1,cc
-6124226,2,depression,3,depression,depression,NN,_,1,conj
-6124226,3,.,4,.,.,.,_,1,punct

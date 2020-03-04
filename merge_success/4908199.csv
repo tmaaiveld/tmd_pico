@@ -1,9 +1,0 @@
-doc,idx,Word_EBM,Sent_pos,Word,Lemma,UPOS,XPOS,HEAD,DEPREL
-4908199,0,A,1,A,a,DT,_,4,det
-4908199,1,randomized,2,randomized,randomize,VBN,_,4,amod
-4908199,2,controlled,3,controlled,controlled,JJ,_,4,amod
-4908199,3,trial,4,trial,trial,NN,_,0,ROOT
-4908199,4,of,5,of,of,IN,_,6,case
-4908199,5,ergotamine,6,ergotamine,ergotamine,NN,_,4,nmod
-4908199,6,tartrate,7,tartrate,tartrate,JJ,_,6,amod
-4908199,7,.,8,.,.,.,_,4,punct

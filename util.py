@@ -16,7 +16,7 @@ def get_id(path):
     return int(''.join(x for x in path if x.isdigit()))
 
 
-def create_folders(*args):
+def make_dirs(*args):
     [Path(arg).mkdir(parents=True, exist_ok=True) for arg in args]
 
 
