@@ -24,9 +24,7 @@ more steps?
 
 - Note that removing words also results in removal of sequence labels, which makes the postprocessing more difficult.
   might be better to avoid and stick to only replacing values with tags such as 'math punctuation'?
-
-
-- POS tagging column (use nltk)
+- should happen before building the vocab for W2V
 
 
 Feature extraction:
