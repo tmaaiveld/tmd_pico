@@ -1,8 +1,11 @@
 from pathlib import Path
-from util import c, get_id, create_folders
+from corpus import Corpus
 import pandas as pd
-import preprocessing as pre
+import importer as pre
 
 RAW_DATA_PATH = Path('data/raw')
 
-raise NotImplementedError('Try running preprocessing.py instead.')
+raise NotImplementedError('File currently not finished. Try running the notebooks with the provided train/test split '
+                          'instead.')
+
+
