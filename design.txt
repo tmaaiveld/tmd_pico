@@ -7,57 +7,83 @@ Input:
 - Raw data from EBM-NLP (to retrieve the labels)
     * now directly imported from tarfile in data/raw and saved in data/raw.pkl.
 
-- Features from StanfordCoreNLP
-    * currently seems very difficult to achieve because of tokenizer disagreement.
-    * tried inputting tokenized data, also returned a different tokenization.
-    * probably need to use a different method to parse dependencies for the existing tokenization.
-
-
 Processing pipeline:
 - preprocessing script imports raw data into tokenized, labeled sequences
-- next step: NLP pipeline
+- Corpus class produces different datasets for comparison. Options:
 -> lowercase
--> punctuation handling
--> stop word removal / tagging??
--> number replacement (strings like ['0.01','2'] replaced with a tag)? note: not amod
-more steps?
+-> stemming (try Porter's algorithm - shown to be effective)
+-> lemmatization (difficult on this corpus...)
+-> punctuation handling? > preferably leave punctuation in
+-> number replacement (strings like ['0.01','2'] replaced with a tag)? /done
+-> cleaning procedure? (check a list of mixed chars like 'a2/' and see if they are good to replace
 
 - Note that removing words also results in removal of sequence labels, which makes the postprocessing more difficult.
   might be better to avoid and stick to only replacing values with tags such as 'math punctuation'?
-- should happen before building the vocab for W2V
+- Careful - don't use embeddings trained on a full dataset (data leakage) [this is the case right now, temporary]
 
 
 Feature extraction:
-Only approaches that allow for input of tokenized data can be easily matched to the labeling annotations in the data.
-We could ask Roser about how to handle this, dependency relationship approaches seem very difficult.
 
-Simple features:
-Lag column(s) (up/down, document level)
 NLTK POS tagging
-Model needs an explicit understanding of sentence demarcation.
+    * implemented, but might not be handled correctly. Good idea to check these
 
-Complex features:
-StanfordNLP: tough to extract/align, cannot take tokenized data
-Other deprel parser (nltk built-in)?
-Word2Vec: data must be one hot coded before applying algorithm to preserve labeling
-- word2vec outputs a lookup table for probabilities -> how to transform these to features?
-- probably not add them raw. possibly use KNN or another unsupervised clustering algorithm to generate
-  a cluster label column.
+Sentence ID, other sentence-level information
+    * try feeding sentences into stanford nlp listparse
+    * sentence position (hot code as categorical?)
 
+tf-idf
+try using the authors' generated POS tags?
+
+Lag column(s) (up/down, document level) for various features
+
+Complex feature options:
+StanfordNLP: might be possible using nltk parser! see https://www.nltk.org/_modules/nltk/parse/stanford.html (parse_sents)
+    * Requires sentence split on data (add sentence id, prep corpus and feed)
+    * if this succeeds: how to further process DEPREL?
+    * could also try using parse trees func directly. Experiment.
+
+FastText embeddings:
+    - pretrained models can be used
+    - pubmed model available
+    - pubmed model also has Sentence level embeddings, might be very interesting to explore
+    - wikipedia dataset? [if time]
+    - word-level: BioWordVec
+    - sent-level: BioSentVec (new feature column attached to each word in sent)
+
+Clustering on the above! promising approach if FastText labels are good.
+
+Feature removal:
+    * drop low predictive embedding columns (use sum over all three classifier relevancy estimations).
+    * can use both word- and sentence-level if most of the cols are removed / clusterings are used.
+    * Tree model can be used as a baseline to determine important features
+    * PCA can be used to reduce dimensionality of the embeddings and reduce training time
 
 Model:
-Potential approaches:
-Tree forest w/ skl (straight-forward and interesting)
+* option to save models and keep training them ('warm start'). This is good because the initialization seems to
+  have an effect
+* handling sample weight? @Roser
+
+Gradient Boosting with SKL
+    * Tuneable parameters: ca. 5
+        https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
+    * use gridsearch and KCV
+    * model sensitive to parameter settings
+    * preprocessing and rich embeddings should help the score here
+
+LSTM in Keras
+    * custom loss?
 
 Bagging/boosting with libraries? (XGBoost)
 
-Decent approach for the paper:
-Prepare 2-3 feature sets using different approaches (deprel parsing, word2vec), train model on subsets of the features
-and compare / see how useful they are. Comparison of F-scores, etc. makes for useful results.
+- apply sample weighting to models? @Roser
 
+
+Parameter tuning:
+dependant on model choice. GridSearchCV with KCV seems like an obvious approach
+* could do quick auto param tune on k.
 
 Post-processing:
-Convert binary columns to B -, I -, E - sequences for each PIO cat
+Convert binary columns to marked sequences for each PIO cat
 could try a simple procedure like unifying labels broken by less than 1-2 words
 
 Output:
@@ -71,9 +97,25 @@ depending on how we handle stop word removal etc...
 something as 1 if, for example, 3/7 values in the surrounding window are 1.
 
 Evaluation:
-Apart from f-scores and model performance...
-Error analysis: Print generated labels for ca. 100 abstracts and review them, implement fixes for common errors
+Model performance can be directly computed (implement K-Fold once building master script)
+Some scoring metrics for the sequence extraction component (e.g. eval after post-processing)?
 
+- handling multi-class precision and recall, do some research.
+
+(Error) analysis:
+Print generated labels for a # of abstracts and review them, implement fixes for detected errors
+Visualize word2vec vectors and colour the instances with the labels.
+
+
+quick file restructure overview:
+- function called run, prepare datasets, etc.
+    * calls import_raw from preprocessing.py
+    * create and modify corpus object (do char preprocessing and add a name) -> program as iterator?
+    * pass into pipeline function -> rename .py to features.py
+        - also pass a param dict, contains all settable variables for pipeline
+        - code may need cleanup and fixing
+
+    * save the created feature sets (df.name before pickling, use important factors as naming scheme), create a few
 
 
 LINKS

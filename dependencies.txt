@@ -1,0 +1,24 @@
+# cd path/to/project
+# pip3 install dependencies.txt
+
+numpy
+pandas
+pyarrow
+
+
+# importer.py
+
+
+# pipeline.py
+
+
+# run.py
+
+
+# corpus.py
+
+
+# model notebooks
+jupyternotify
+
+# util.py

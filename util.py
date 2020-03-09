@@ -1,15 +1,13 @@
 import json
+import random
 from itertools import chain
 from pathlib import Path
+import pandas as pd
+import sys
 
 
 def c(x):
     return chain.from_iterable(x)
-
-
-def load_json(path):
-    with path.open() as f:
-        return json.load(f)
 
 
 def get_id(path):
@@ -20,14 +18,27 @@ def make_dirs(*args):
     [arg.mkdir(parents=True, exist_ok=True) for arg in args]
 
 
-def compare_keys(op, d1, d2):
-    d1 = set(d1)
-    d2 = set(d2)
+def get_wv(word, wv):
+    return wv[word]
 
-    if op == 'intersection':
-        return d1.intersection(d2)
-    elif op == 'union':
-        return d2.union(d2)
+
+def split_docs(token_s):
+    return token_s.groupby('doc').apply(list).tolist()
+
+
+def downsample(df, frac):
+    n = int(len(df.index.unique('doc')) * frac)
+    print(n)
+    print(df.index)
+    selected = random.sample(list(df.index.unique('doc')), n)
+    return df.loc[(selected, slice(None))]
+
+
+def mem_usage(*args):
+    data_mem = sum(sys.getsizeof(i) for i in [args])
+    print(f'Loaded {data_mem / (10**9)} GB of data')
+
 
 if __name__ == '__main__':
     make_dirs('data/raw')
+

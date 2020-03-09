@@ -9,3 +9,4 @@ out
 gen
 data/
 examples/.ipynb_checkpoints/
+/deprecated.py
