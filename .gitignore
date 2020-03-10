@@ -10,3 +10,5 @@ gen
 data/
 examples/.ipynb_checkpoints/
 /deprecated.py
+
+.ipynb_checkpoints/.ipynb-checkpoint

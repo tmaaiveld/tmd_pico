@@ -179,7 +179,7 @@ def main():
 
         quit()
 
-    raise NotImplementedError('FastText models are currently not available.')
+    # raise NotImplementedError('FastText models are currently not available.')
     # todo: ---------------
     # todo: add TF/IDF col
 
