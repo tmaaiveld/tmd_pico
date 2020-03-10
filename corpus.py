@@ -3,7 +3,7 @@ import decimal as dec
 from nltk.stem.snowball import SnowballStemmer
 
 class Corpus: # move later
-    """A class which receives a pd.Series of indexed documents and can execute various preprocessing methods."""
+    """A class which receives a pd.Series of indexed documents and can execute various preprocessing methods to produce different version of word columns or different features to be added."""
 
     # add methods to create processing protocols for data
     # lowercasing
@@ -16,17 +16,20 @@ class Corpus: # move later
     # https://www.nltk.org/_modules/nltk/parse/stanford.html <- can try stanford again using sep sent tokens?
 
     def __init__(self, doc_series):
-        self.doc_series = doc_series
-        self.df = doc_series.to_frame()
+        self.doc_series = doc_series # remains unchanged
+        self.df = doc_series.to_frame() # is changed
         self.idx = doc_series.index
         self.doc_lists = doc_series.groupby('doc').apply(list).tolist()
         self.sent_lists = None
-
-        # self.zip_docs() # zip to list of lists
-        # self.zip_sents()
+        
+        print(self.df)
+        quit()
 
     # modify series.name as
-
+    
+    def return_words_nparr(self):
+        return self.df.values.tolist()
+        
     def process(self):
         self.idx_sentences()
         self.lower()
@@ -169,11 +172,14 @@ if __name__ == '__main__':
 
     # could use parent/child (DocSeries parent, Corpus child)
     print('loading data')
-    data = pd.read_pickle('data/raw/labels.pkl')['Word']
+    data = pd.read_parquet('data/split/train_1000.parquet')['Word']
     corp = Corpus(data[1000:])
 
     print(corp)
 
+    num_replace = Corpus(data).replace_num() # Important, but may already work
+    print(num_replace)
+    
     sent_tagged = corp.idx_sentences().df
     print(sent_tagged)
 
@@ -183,8 +189,7 @@ if __name__ == '__main__':
     stemmed = Corpus(data).stem()
     print(stemmed)
 
-    num_replace = Corpus(data).replace_num()
-    print(num_replace)
+
 
     print(pd.concat([sent_tagged, lowercased, stemmed, num_replace], axis=1))
 
