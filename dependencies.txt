@@ -1,6 +1,7 @@
 # cd path/to/project
 # pip3 install dependencies.txt
 
+jupiternotify
 numpy
 pandas
 pyarrow
