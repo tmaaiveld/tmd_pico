@@ -1,6 +1,8 @@
 import pandas as pd
 import decimal as dec
-from nltk.stem.snowball import SnowballStemmer
+import numpy as np
+import nltk
+#nltk.download('stopwords')
 
 class Corpus: # move later
     """
@@ -11,7 +13,6 @@ class Corpus: # move later
     """
 
     # todo: add a method for detecting stop words
-
 
 
     # https://radimrehurek.com/gensim/parsing/preprocessing.html
@@ -27,17 +28,22 @@ class Corpus: # move later
         self.sent_index = None
         self.idx_sentences()
 
-    def lower(self): # todo: untested
+    def remove_whitespace(self):
+        self.df['Word'] = [word.strip() for word in self.df['Word']]
+        return self
 
+    def lower(self):
         self.df['Word'] = [word.lower() for word in self.df['Word']]
-
         return self
 
     def stem(self): # todo: untested
         stemmer = SnowballStemmer("english", ignore_stopwords=True)
         self.df['Word'] = [stemmer.stem(word) for word in self.df['Word']]
-
         return self
+
+   # def lemmatize(self):
+   #     lemmatizer = WordNetLemmatizer()
+   #     self.df['Word'] = [lemmatizer.lemmatize(word, pos=postag)for word in self.df['Word']]
 
     def replace_num(self):
         """
@@ -62,7 +68,6 @@ class Corpus: # move later
                 return lemma
 
     def idx_sentences(self):
-
         # First, slice the word column from the Corpus.df. .to_frame() converts that column to a new DataFrame.
         new_indices = self.df['Word'].copy().to_frame()
 
@@ -93,15 +98,77 @@ class Corpus: # move later
         return self
 
     def by_sent(self):
-
         self.df.index = self.sent_index
         return self
 
     def loc_features(self):
-
-        new_indices = pd.DataFrame(index=self.sent_index).reset_index(['sent', 'token']).astype(str)
+        new_indices = pd.DataFrame(index=self.sent_index).reset_index(['doc', 'sent', 'token']).astype(str)
+        self.df['doc_loc'] = new_indices['doc'].values
         self.df['sent_loc']  = new_indices['sent'].values
         self.df['token_loc'] = new_indices['token'].values
+        return self
+
+    def first_last_features(self):
+        new_col = len(self.df.index) * [0]
+        self.df['first_sent'] = new_col
+        self.df['last_sent'] = new_col
+        print(self.df)
+        documents = self.df['doc_loc'].tolist()
+        # for doc in documents:
+            #selection['first_sent'] = [1 for sent_loc in selection['sent_loc'] if sent_loc == 1]
+            #selection['last_sent'] = [1 for sent_loc in selection['sent_loc'] if sent_loc == n_last_sent]
+
+        # selection = self.df.loc[(self.df['doc_loc'] == doc)]
+        # n_last_sent = len(set(selection['sent_loc'].tolist()))
+        last_sents = self.df['sent_loc'].groupby('doc').max().to_string()[1000:]
+
+        self.df = self.df.merge(last_sents, method='left', on='doc')
+        # self.df.loc['sent_loc'] = last_sents
+
+        print(self.df['sent_loc'])
+        quit()
+        #.groupby('doc').transform('max')
+        # self.df[self.df.groupby('doc')['last_sent'].transform('max') == df['sent_loc']]
+
+        print(self.df)
+        print(last_sents)
+        quit()
+        x = selection.where(selection['sent_loc' == 1])
+
+        print(x)
+        quit()
+
+            # for i, r in selection.iterrows():
+            #     if r['sent_loc'] is 1:
+            #         r['first_sent'] = 1
+            #     elif r['sent_loc'] is n_last_sent:
+            #         r['last_sent'] = 1
+        print(self.df)
+        return self
+
+    def stopword_feature(self):
+        new_col = len(self.df.index) * [0]
+        self.df['stopword'] = new_col
+
+        from nltk.corpus import stopwords
+        stop_words = set(stopwords.words('english'))
+        stop_words.remove('not')
+        stop_words.remove('no')
+
+        for index, row in self.df.iterrows():
+            if row['Word'] in stop_words:
+                row['stopword'] = 1
+
+        print(self.df['stopword'][1])
+
+        #select_indices = list(np.where(self.df["Word"] == True)[0])
+        #df.iloc[select_indices]
+        #for token in self.df['Word']:
+        #    if token in stop_words:
+        #        self.df.loc[[token], ['stopword']] = 1
+                #print(self.df.loc[token])
+                #self.df.loc[token]['stopword'] = 1   #or replace with a nonsense token that has no influence in training?
+        print(self.df)
         return self
 
     def zip_sents(self):
@@ -111,36 +178,33 @@ class Corpus: # move later
         return docs.groupby(['doc', 'sent']).apply(list).to_dict()
 
 
+
 if __name__ == '__main__':
 
     # dataset production demo
-
     # could use parent/child (DocSeries parent, Corpus child)
     print('loading data')
     data = pd.read_parquet('data/split/train_1000.parquet')['Word']
     corp = Corpus(data)
+    corp.by_sent() # index the corpus by sentence
 
-    # index the corpus by sentence
-    corp.by_sent()
-    print(corp.df)
+    # zip the sentences to a dict of lists for parsing and save them to a list using pickle
+    zip_sents = corp.zip_sents()
+    #import pickle
+    #with open('data/sentences.pickle', 'wb') as handle:
+    #    pickle.dump(zip_sents, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     # add word/sent location features to df
-    corp.loc_features()
-    print(corp.df)
 
-    # zip the sentences to a dict of lists for parsing
-    zip_sents = corp.zip_sents()
-    print(zip_sents)
+    corp.loc_features()    #adds sent id and token id as features to df
+    corp.first_last_features()  #adds whether token is in first or last sentence of document as features
+    #corp.remove_whitespace()
+    #corp.lower()          #lowers all characters
+    #corp.stopword_feature()
+    #print(corp.df)
+    quit()
 
-    # save the zipped sentences to a list.
-    import pickle
-    with open('data/sentences.pickle', 'wb') as handle:
-        pickle.dump(zip_sents, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-    # detecting stop words
-    raise NotImplementedError()
-
-    # Stemming. Seems to work ok.
+    # Stemming. Seems to work ok. not necessary soufyan made a nice lemmatrizer
     stemmed = Corpus(data).stem().df
     print(stemmed)
 
