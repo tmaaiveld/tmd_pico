@@ -1,0 +1,133 @@
+Data:
+4,993 abstracts - only Starting Spans contains all fully annotated data.
+Train/test split maintained for all docs (~4700/190)
+NOTE: ebm_nlp_2_00 seems to have differing numbers of tokens (in /documents) and labels (in /annotated).
+
+Input:
+- Raw data from EBM-NLP (to retrieve the labels)
+    * now directly imported from tarfile in data/raw and saved in data/raw.pkl.
+
+Processing pipeline:
+- preprocessing script imports raw data into tokenized, labeled sequences
+- Corpus class produces different datasets for comparison. Options:
+-> lowercase
+-> stemming (try Porter's algorithm - shown to be effective)
+-> lemmatization (difficult on this corpus...)
+-> punctuation handling? > preferably leave punctuation in
+-> number replacement (strings like ['0.01','2'] replaced with a tag)? /done
+-> cleaning procedure? (check a list of mixed chars like 'a2/' and see if they are good to replace
+
+- Note that removing words also results in removal of sequence labels, which makes the postprocessing more difficult.
+  might be better to avoid and stick to only replacing values with tags such as 'math punctuation'?
+- Careful - don't use embeddings trained on a full dataset (data leakage) [this is the case right now, temporary]
+
+
+Feature extraction:
+
+NLTK POS tagging
+    * implemented, but might not be handled correctly. Good idea to check these
+
+Sentence ID, other sentence-level information
+    * try feeding sentences into stanford nlp listparse
+    * sentence position (hot code as categorical?)
+
+tf-idf
+try using the authors' generated POS tags?
+
+Lag column(s) (up/down, document level) for various features
+
+Complex feature options:
+StanfordNLP: might be possible using nltk parser! see https://www.nltk.org/_modules/nltk/parse/stanford.html (parse_sents)
+    * Requires sentence split on data (add sentence id, prep corpus and feed)
+    * if this succeeds: how to further process DEPREL?
+    * could also try using parse trees func directly. Experiment.
+
+FastText embeddings:
+    - pretrained models can be used
+    - pubmed model available
+    - pubmed model also has Sentence level embeddings, might be very interesting to explore
+    - wikipedia dataset? [if time]
+    - word-level: BioWordVec
+    - sent-level: BioSentVec (new feature column attached to each word in sent)
+
+Clustering on the above! promising approach if FastText labels are good.
+
+Feature removal:
+    * drop low predictive embedding columns (use sum over all three classifier relevancy estimations).
+    * can use both word- and sentence-level if most of the cols are removed / clusterings are used.
+    * Tree model can be used as a baseline to determine important features
+    * PCA can be used to reduce dimensionality of the embeddings and reduce training time
+
+Model:
+* option to save models and keep training them ('warm start'). This is good because the initialization seems to
+  have an effect
+* handling sample weight? @Roser
+
+Gradient Boosting with SKL
+    * Tuneable parameters: ca. 5
+        https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
+    * use gridsearch and KCV
+    * model sensitive to parameter settings
+    * preprocessing and rich embeddings should help the score here
+
+LSTM in Keras
+    * custom loss?
+
+Bagging/boosting with libraries? (XGBoost)
+
+- apply sample weighting to models? @Roser
+
+
+Parameter tuning:
+dependant on model choice. GridSearchCV with KCV seems like an obvious approach
+* could do quick auto param tune on k.
+
+Post-processing:
+Convert binary columns to marked sequences for each PIO cat
+could try a simple procedure like unifying labels broken by less than 1-2 words
+
+Output:
+Extracted P, I, O sequences associated with an abstract
+Useful for PubMed/other database search engine
+Emphasis on high recall, completeness of sequences
+Different goal from EBM-NLP authors
+
+depending on how we handle stop word removal etc...
+- Sequences could be extracted using aggregation and filtering techniques. E.g. a sliding window that annotates
+something as 1 if, for example, 3/7 values in the surrounding window are 1.
+
+Evaluation:
+Model performance can be directly computed (implement K-Fold once building master script)
+Some scoring metrics for the sequence extraction component (e.g. eval after post-processing)?
+
+- handling multi-class precision and recall, do some research.
+
+(Error) analysis:
+Print generated labels for a # of abstracts and review them, implement fixes for detected errors
+Visualize word2vec vectors and colour the instances with the labels.
+
+
+quick file restructure overview:
+- function called run, prepare datasets, etc.
+    * calls import_raw from preprocessing.py
+    * create and modify corpus object (do char preprocessing and add a name) -> program as iterator?
+    * pass into pipeline function -> rename .py to features.py
+        - also pass a param dict, contains all settable variables for pipeline
+        - code may need cleanup and fixing
+
+    * save the created feature sets (df.name before pickling, use important factors as naming scheme), create a few
+
+
+LINKS
+overview of preprocessing.
+https://www.quora.com/Why-should-punctuation-be-removed-in-Word2vec
+https://www.quora.com/How-does-word2vec-work-Can-someone-walk-through-a-specific-example/answer/Ajit-Rajasekharan
+
+Topic modeling
+https://en.wikipedia.org/wiki/Topic_model
+
+Tutorial shows a different sequence of steps than our data but overall approach is the same
+https://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
+
+word2vec implementation with tokenized input. Also contains some interesting processing (in R)
+https://github.com/h2oai/h2o-3/blob/master/h2o-r/demos/rdemo.word2vec.craigslistjobtitles.R

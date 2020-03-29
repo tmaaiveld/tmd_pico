@@ -1,3 +1,8 @@
+'''
+todo:
+- check what is still used / needed in this file.
+'''
+
 import json
 import random
 from itertools import chain
