@@ -5,12 +5,13 @@ import warnings
 from pathlib import Path
 import pandas as pd
 
-from processing.embeddings import load_ft_model
-from processing.tfidf import tfidf
+from processing.features.embeddings import load_ft_model
+from processing.features.tfidf import tfidf
 from processing.importer import load_tarfile
+import processing.optimizer as opt
 
 # nltk.download('stopwords')
-CONLL_COLS = ['form', 'lemma', 'upos', 'xpos', 'feats', 'head', 'deprel']
+CONLL_COLS = ['lemma', 'upos', 'xpos', 'feats', 'head', 'deprel']
 
 
 class Corpus:
@@ -19,16 +20,17 @@ class Corpus:
     """
 
     def __init__(self, doc_series, indexed=False):
+
+        # create two attributes for the documents and the features
         self.doc_series = doc_series.copy()
         self.df = doc_series.to_frame().rename({'Word': 'token'}, axis='columns')
 
         self.doc_ids = set(self.doc_series.index.unique('doc'))
         self.n_docs = len(self.doc_series.index.unique('doc'))
 
+        # index the data
         if not indexed:
             self._idx_sentences()
-        # else:
-        #     self.doc_series = self._idx_doc_series()
 
     @classmethod
     def from_tarfile(cls, path, word_col='token'):
@@ -186,51 +188,65 @@ class Corpus:
         self.df['last_word'] = self.df['sent_loc'] == n_words_sent
         return self
 
-    def load_embeddings(self, filepath='data\\processing\\ft_embeds.parquet',
-                        model_path='models/ft_models/BioWordVec_PubMed_MIMICIII_d200.bin'):
+    def load_embeddings(self, file_path='data\\features\\ft_embeds.parquet',
+                        model_path=None, pca_cutoff=0.9):
 
-        if Path(filepath).exists():
-            embeddings = pd.read_parquet(str(filepath))
-            print(f'Loading FastText embeddings from {filepath}.')
+        if Path(file_path).exists():
+            embeddings = pd.read_parquet(str(file_path))
+            print(f'Loading FastText embeddings from {file_path}.')
 
         else:
-            print(f'No embeddings found at {filepath}. Loading model for vector query. This may take a long time.')
+            if model_path is not None:
+                print(f'No embeddings found at {file_path}. Loading model for vector query. This may take a long time.')
 
-            model = load_ft_model(model_path)
-            embeddings = pd.DataFrame([model.get_word_vector(word) for word in self.doc_series.values],
-                                      index=self.df.index, columns=[f'PMFT_{i + 1}' for i in range(200)])
-            embeddings.to_parquet(str(filepath))
+                model = load_ft_model(model_path)
+                embeddings = pd.DataFrame([model.get_word_vector(word) for word in self.doc_series.values],
+                                          index=self.df.index, columns=[f'PMFT_{i + 1}' for i in range(200)])
 
-        # embeddings = embeddings.loc[self.df.index]
-        # self.df = pd.concat([c.reset_index(drop=True) for c in [self.df, embeddings]], axis=1).set_index(self.df.index)
+                print('embeddings loaded. Applying Principal Component Analysis (set pca_cutoff to None to disable)')
+                embeddings.to_parquet(str(file_path))
+            else:
+                raise Exception('Please specify a model_path to load the model from.')
+
+        if not pca_cutoff is None:
+            embeddings = opt.pca_transform(embeddings, pca_cutoff)
+
         self.df = self.df.join(embeddings)
         return self
 
-    def load_CoNLL(self, filepath='data\\processing\\conll.csv'):
-        from processing.conll_parse import conll_parse
+    def load_CoNLL(self, file_path='data\\features\\conll.csv'):
+        from processing.features.conll_parse import conll_parse
 
-        if not Path(filepath).exists():
-            print(f'No CoNNL output detected at {filepath}. Generating data.')
+        if not Path(file_path).exists():
+            print(f'No CoNNL output detected at {file_path}. Generating data. This may take up to several hours'
+                  f'for the full dataset.')
+
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                conll_parse(self.zip_sents(), filepath)
+                conll_parse(self.zip_sents(), file_path)
 
-        print(f'Loading CoNLL data from {filepath}.')
+        print(f'Loading CoNLL data from {file_path}.')
 
         index = self.df.index
-        output = pd.read_csv(filepath, sep='\t', header=None, keep_default_na=False).iloc[:, 2:8].dropna(axis=0, how='all')
+
+        if str(file_path).split('.')[-1] == 'csv':
+            output = pd.read_csv(file_path, sep='\t', header=None, keep_default_na=False).iloc[:, 2:8].dropna(axis=0, how='all')
+        else:
+            output = pd.read_parquet(file_path).iloc[:, 2:8].dropna(axis=0, how='all')
+
         output.columns = CONLL_COLS # todo: add cols
 
         # self.df = pd.concat([c.reset_index(drop=True) for c in [self.df, output]], axis=1)
         # self.df.index = index
 
-        # output = pd.read_parquet(filepath).iloc[:, 2:8]
+        # output = pd.read_parquet(file_path).iloc[:, 2:8]
 
         nan = output.isna().sum().sum()
         if nan > 1:
-            print(f'Warning: {nan} missing values detected in CoNNL columns.')
+            print(f"Warning: {nan} missing values detected in {file_path}. Filling with '_'.")
+            output = output.fillna('_')
 
-        self.df = self.df.join(output.fillna('_'))
+        self.df[CONLL_COLS] = output.fillna('_')
 
         return self
 
@@ -256,11 +272,11 @@ class Corpus:
 
         return self
 
-    def load_sentiments(self, filepath='data\\processing\\sentiments.parquet'):
+    def load_sentiments(self, file_path='data\\processing\\sentiments.parquet'):
 
-        if Path(filepath).exists():
-            print(f'Loading sentiments from {filepath}')
-            self.df[['polarity', 'subjectivity']] = pd.read_parquet(filepath)
+        if Path(file_path).exists():
+            print(f'Loading sentiments from {file_path}')
+            self.df[['polarity', 'subjectivity']] = pd.read_parquet(file_path)
 
         else:
             from textblob import TextBlob
@@ -291,6 +307,7 @@ class Corpus:
         else:
             print('Invalid file extension specified. Supported formats: .pickle, .parquet')
 
+
     def _idx_sentences(self):
         print(f'Indexing sentences for {self.n_docs} documents.')
         new_indices = self.doc_series.copy().to_frame()
@@ -312,39 +329,22 @@ class Corpus:
 
         self.doc_series.index = self.df.index
 
-    # def _idx_doc_series(self):
-    #     self.doc_series = self.df['token'].reset_index(['sent', 'word'], drop=True) \
-    #                          .set_index(self.df.index.to_frame().iloc[:, -1]
-    #                                            .groupby('doc').cumcount(), append=True)
-    #     return self
+        def _optimize_for_tree(self):
+            self.df = opt.tree_optimize(self.df)
+            return self
 
 
 if __name__ == '__main__':
-    testfile = 'data/split/train.parquet'
+    testfile = 'path/to/testfile.parquet'
     data = pd.read_parquet(testfile)['form']
     corpus = Corpus(data)
-    print(corpus.df.reset_index()[corpus.doc_series.isna().reset_index(drop=True)])
 
-    # print(corpus.doc_series[corpus.doc_series==None])
     corpus.mark_numeric()
-    corpus.calc_tfidf()
     corpus.mark_capitals()
     corpus.load_sentiments()
 
-    print(corpus.df.index.names)
     print(corpus.df)
+    print(corpus.df.columns)
+    print(corpus.df.index)
+    print(corpus.doc_series)
     print(corpus.df.sum())
-
-    corpus.df['form'] = corpus.doc_series
-
-    corpus.df['Word'] = corpus.df.reset_index()['token'].tolist()
-    corpus.save('test.parquet')
-
-    print(pd.read_parquet('test.parquet')['Word'])
-
-    corpus2 = corpus.from_frame(corpus.df, word_col='Word', indexed=True)
-    corpus3 = corpus.from_parquet('test.parquet')
-
-    print(corpus3.df['near_cap'])
-
-    corpus3.save('test.csv')

@@ -1,4 +1,0 @@
-verbosity, 3
-tree_method, gpu_hist
-eval_metric, rmsle
-scale_pos_weight, 9.641359244620114

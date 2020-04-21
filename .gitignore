@@ -7,8 +7,11 @@
 *.iml
 out
 gen
-data/
 examples/.ipynb_checkpoints/
-/deprecated.py
-
 .ipynb_checkpoints/.ipynb-checkpoint
+
+data/
+
+# some of Tommy's files that he doesn't want to end up on the Git.
+/deprecated/deprecated.py
+!/deprecated/corpus_old.py

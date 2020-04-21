@@ -1,10 +1,11 @@
+import sys
 import tarfile
 import shutil
 from pathlib import Path
 import pandas as pd
 
-DATA_PATH = Path('data\\raw')
-PHASE = 'starting_spans' # 'hierarchical_labels'
+DATA_PATH = Path('../data/')
+PHASE = 'starting_spans'
 CATS = ('interventions', 'outcomes', 'participants')
 
 
@@ -96,7 +97,8 @@ if __name__ == '__main__':
 
     else:
         try:
-            data = load_tarfile(DATA_PATH / 'ebm_nlp_1_00.tar.gz', PHASE, verbose=True)
+            data = load_tarfile(Path(sys.argv[1]) if len(sys.argv) > 1 else DATA_PATH / 'ebm_nlp_1_00.tar.gz',
+                                PHASE, verbose=True)
             assert len(data) > 0
 
         except AssertionError:
