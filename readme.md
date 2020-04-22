@@ -1,6 +1,6 @@
 This is the repository and code submission for the Automated PICO Extraction project.
 
-The original dataset can be downloaded from https://github.com/bepnye/EBM-NLP (ebm_nlp_1_00.tar.gz) and imported by running:
+The original data set can be downloaded from https://github.com/bepnye/EBM-NLP (ebm_nlp_1_00.tar.gz) and imported by running:
 
 `$ python3 processing/importer.py <path/to/ebm_nlp_1_00.tar.gz>`
 
